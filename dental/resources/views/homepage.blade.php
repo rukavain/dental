@@ -9,11 +9,10 @@
 
 <body class="bg-slate-100">
     @include('components.navbar')
-    <section class="flex flex-wrap justify-between md:justify-center gap-12 mx-4 items-center my-12">
-        <div class="bg-white flex flex-col py-8 px-12 rounded-lg shadow-lg gap-6 h-min md:max-w-lg">
+    <section class="flex py-8 flex-wrap justify-between md:justify-center mx-4 items-center ">
+        <div class="bg-white flex flex-col py-11 px-12 mx-8 rounded-lg shadow-lg gap-6 md:max-w-lg h-full">
             <h1 class="text-7xl font-semibold max-md:text-5xl">Look forward to the dentist</h1>
             <h1 class="text-lg">Top-rated clinicians</h1>
-
             <div class="w-1/2 py-2 flex flex-col justify-center items-start gap-4">
                 <a class="max-w-sm text-center mt-4" href="">
                     <h1
@@ -25,7 +24,7 @@
                 </h1>
             </div>
         </div>
-        <div class="max-w-[50%] flex justify-center items-center max-md:hidden">
+        <div class="w-2/5 flex justify-center items-center  max-md:hidden">
             <img class="h-max rounded-lg" src="{{ asset('images/hero-image.jpg') }}" alt="">
         </div>
     </section>
@@ -37,7 +36,7 @@
         </div>
         <div class="flex flex-col justify-center items-start my-5 gap-8 px-4">
             <div class="flex gap-6 justify-center items-center">
-                <h1 class="bg-white text-green-800 p-6 rounded-full font-bold text-md">
+                <h1 class="bg-white text-slate-900 p-6 rounded-full font-bold text-md">
                     15+
                 </h1>
                 <div class="flex flex-col justify-start items-start">
@@ -62,6 +61,60 @@
                     <h1 class="text-white font-semibold text-4xl max-md:text-3xl">Only the care you need</h1>
                     <h1 class="text-white text-md">Our dentists don't make a commission on procedures.</h1>
                 </div>
+            </div>
+            <a href="" class="my-4">
+                <h1
+                    class="bg-white text-gray-900 font-semibold text-md py-4 px-8 rounded-md hover:bg-gray-900 hover:text-white transition-all">
+                    Learn more</h1>
+            </a>
+        </div>
+    </section>
+    <section class="flex justify-evenly items-center ">
+        <div class="flex flex-col justify-start gap-4 max-w-xl p-12 rounded-md bg-green-600 text-white shadow-lg">
+            <h1 class="text-6xl font-semibold">
+                Services
+            </h1>
+            <h1 class="font-semibold text-xl">
+                Exceptional dental care for a healthier, brighter smile.
+            </h1>
+            <span class="text-md my-2">
+                Skilled and compassionate dental professionals prioritize patient comfort and satisfaction, ensuring
+                a
+                gentle and thorough experience. Emphasis is placed on education for proper oral hygiene practices to
+                maintain long-term dental health.
+            </span>
+        </div>
+        <div
+            class="flex flex-wrap justify-evenly items-center gap-12 mx-6 p-6 bg-white shadow-lg rounded-lg w-1/2 justify-self-end self-end ">
+            <div class="flex flex-col justify-center items-center  max-w-md bg-green-600 rounded-md py-4 px-2">
+                <img class="h-44 bg-white m-4 p-5 rounded-md object-contain" src="{{ asset('images/root-canal.png') }}"
+                    alt="">
+                <h1 class="text-white font-semibold text-center">Root Canal</h1>
+            </div>
+            <div class="flex flex-col justify-center items-center   bg-green-600 rounded-md py-4 px-2">
+                <img class=" h-44 bg-white m-4 p-5 rounded-md object-contain"
+                    src="{{ asset('images/tooth-extraction.png') }}" alt="">
+                <h1 class="text-white font-semibold text-center">Tooth Extraction</h1>
+            </div>
+            <div class="flex flex-col justify-center items-center max-w-md bg-green-600 rounded-md py-4 px-2">
+                <img class=" h-44 bg-white m-4 p-5 rounded-md object-contain"
+                    src="{{ asset('images/dental-restoration.png') }}" alt="">
+                <h1 class="text-white font-semibold text-center">Dental Restoration</h1>
+            </div>
+            <div class="flex flex-col justify-center items-center  bg-green-600 rounded-md py-4 px-2">
+                <img class=" h-44 bg-white m-4 p-5 rounded-md object-contain"
+                    src="{{ asset('images/dental-sealant.png') }}" alt="">
+                <h1 class="text-white font-semibold text-center">Dental Sealant</h1>
+            </div>
+            <div class="flex flex-col justify-center items-center max-w-md bg-green-600 rounded-md py-4 px-2">
+                <img class=" h-44 bg-white m-4 p-5 rounded-md object-contain" src="{{ asset('images/braces.png') }}"
+                    alt="">
+                <h1 class="text-white font-semibold text-center">Braces</h1>
+            </div>
+            <div class="flex flex-col justify-center items-center border  bg-green-600 rounded-md py-4 px-2">
+                <img class=" h-44 bg-white m-4 p-5 rounded-md object-contain"
+                    src="{{ asset('images/dental-cleaning.png') }}" alt="">
+                <h1 class="text-white font-semibold text-center">Dental Cleaning</h1>
             </div>
         </div>
     </section>
