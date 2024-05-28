@@ -13,11 +13,14 @@
             <div>
                 <img class="h-14" src="{{ asset('images/logo.png') }}" alt="">
             </div>
-            <h1 class="hover:font-bold transition-all cursor-pointer">Insurance</h1>
-            <h1 class="hover:font-bold transition-all cursor-pointer">Locations</h1>
-            <h1 class="hover:font-bold transition-all cursor-pointer">Services</h1>
-            <h1 class="hover:font-bold transition-all cursor-pointer">Orthodontics</h1>
-            <h1 class="hover:font-bold transition-all cursor-pointer">Emergency</h1>
+            <div class="flex gap-4 max-md:hidden">
+                <h1 class="hover:font-bold transition-all cursor-pointer">Insurance</h1>
+                <h1 class="hover:font-bold transition-all cursor-pointer">Locations</h1>
+                <h1 class="hover:font-bold transition-all cursor-pointer">Services</h1>
+                <h1 class="hover:font-bold transition-all cursor-pointer">Orthodontics</h1>
+                <h1 class="hover:font-bold transition-all cursor-pointer">Emergency</h1>
+            </div>
+
         </div>
         <div class="flex gap-6 justify-center items-center">
             <h1 class="font-bold">Login</h1>
