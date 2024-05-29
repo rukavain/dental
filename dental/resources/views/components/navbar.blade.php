@@ -20,13 +20,15 @@
                 <h1 class="hover:font-bold transition-all cursor-pointer">Orthodontics</h1>
                 <h1 class="hover:font-bold transition-all cursor-pointer">Emergency</h1>
             </div>
-
         </div>
         <div class="flex gap-6 justify-center items-center">
             <h1 class="font-bold">Login</h1>
-            <h1
-                class="py-2 px-4 rounded-md text-white font-semibold bg-green-600 hover:bg-green-700 transition-all cursor-pointer">
-                BOOK NOW</h1>
+            <a href="{{ route('request-appointment') }}">
+                <h1
+                    class="py-2 px-4 rounded-md text-white font-semibold bg-green-600 hover:bg-green-700 transition-all cursor-pointer">
+                    BOOK NOW</h1>
+            </a>
+
         </div>
     </div>
 </body>

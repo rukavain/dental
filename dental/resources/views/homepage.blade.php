@@ -14,7 +14,7 @@
             <h1 class="text-7xl font-semibold max-md:text-5xl">Look forward to the dentist</h1>
             <h1 class="text-lg">Top-rated clinicians</h1>
             <div class="w-1/2 py-2 flex flex-col justify-center items-start gap-4">
-                <a class="max-w-sm text-center mt-4" href="">
+                <a class="max-w-sm text-center mt-4" href="{{ route('request-appointment') }}">
                     <h1
                         class="min-w-max bg-green-600 rounded-md py-4 max-md:text-sm px-8 font-bold text-white hover:bg-green-700 transition-all">
                         BOOK NOW</h1>
