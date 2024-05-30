@@ -9,8 +9,9 @@
 </head>
 
 <body>
-    <footer class="flex flex-col justify-center items-center py-8">
-        <section class="flex gap-20 justify-center items-start py-4 mb-12">
+    <footer class="flex flex-col justify-center items-center py-8 px-4">
+        <section
+            class="flex  gap-20 max-md:gap-4 max-md:hidden max-md:text-sm justify-evenly w-full items-start py-4 mb-12">
             <div>
                 <h1>
                     STAY IN TOUCH
@@ -54,8 +55,6 @@
                     <h1>Tooth Filling</h1>
                     <h1>Braces</h1>
                 </div>
-
-
             </div>
             <div>
                 <h1>
@@ -82,16 +81,16 @@
             </div>
         </section>
         <hr class="border-t-2 w-full py-4 border-green-700">
-        <section class="flex justify-evenly items-end w-full">
-            <div class="">
+        <section class="flex justify-evenly max-md:flex-col max-md:items-center items-end w-full gap-4">
+            <div class="max-md:text-sm text-center">
                 <h1>&copy; Tooth Impressions Dental Clinic </h1>
                 <h1>Privacy Policy | Accessibility Statement</h1>
             </div>
-            <div class="flex flex-col justify-center items-center gap-4">
+            <div class="flex flex-col max-md:text-sm text-center justify-center items-center gap-4">
                 <img class="h-12" src="{{ asset('images/logo.png') }}" alt="">
                 <h1>Tooth Impressions Dental Clinic</h1>
             </div>
-            <div class="">
+            <div class="max-md:text-sm">
                 <h1>Dental Web Design & Marketing by: Vain</h1>
             </div>
         </section>

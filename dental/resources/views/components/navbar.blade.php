@@ -10,9 +10,9 @@
 <body>
     <div class="flex p-4 justify-between align-center shadow-lg">
         <div class="flex gap-4 text-md justify-center items-center">
-            <div>
+            <a href="{{ route('homepage') }}">
                 <img class="h-14" src="{{ asset('images/logo.png') }}" alt="">
-            </div>
+            </a>
             <div class="flex gap-4 max-md:hidden">
                 <h1 class="hover:font-bold transition-all cursor-pointer">Insurance</h1>
                 <h1 class="hover:font-bold transition-all cursor-pointer">Locations</h1>
