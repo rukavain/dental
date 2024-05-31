@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{{ config('app.name') }} @yield('title') </title>
+    <title>{{ config('app.name') }} | Register </title>
     <link rel="icon" href="{{ asset('/images/logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
@@ -19,12 +19,12 @@
                     <label for="firstname">
                         <h1 class="font-semibold">First name</h1>
                         <input class="border text-black border-gray-400 py-2 px-4 rounded-md" type="text"
-                            name="firstname" id="firstname">
+                            name="firstname" id="firstname" placeholder="Juan">
                     </label>
                     <label for="lastname">
                         <h1 class="font-semibold">Last name</h1>
                         <input class="border text-black border-gray-400 py-2 px-4 rounded-md" type="text"
-                            name="lastname" id="lastname">
+                            name="lastname" id="lastname" placeholder="Dela Cruz">
                     </label>
                     <label for="date-of-birth">
                         <h1 class="font-semibold">Date of birth</h1>
@@ -51,23 +51,24 @@
                         <input class="border text-black border-gray-400 py-2 px-4 rounded-md" type="password"
                             name="password" id="password">
                     </label>
-                </label>
-                <label for="confirm-password">
-                    <h1 class="font-semibold">Confirm Password</h1>
-                    <input class="border text-black border-gray-400 py-2 px-4 rounded-md" type="password"
-                        name="confirm-password" id="confirm-password">
-                </label>
-                <label for="address">
-                    <h1 class="font-semibold">Address</h1>
-                    <input class="border min-w-full text-black border-gray-400 py-2 px-4 rounded-md" type="text"
-                        name="address" id="address">
-                </label>
+                    </label>
+                    <label for="confirm-password">
+                        <h1 class="font-semibold">Confirm Password</h1>
+                        <input class="border text-black border-gray-400 py-2 px-4 rounded-md" type="password"
+                            name="confirm-password" id="confirm-password">
+                    </label>
+                    <label for="address">
+                        <h1 class="font-semibold">Address</h1>
+                        <input class="border w-full text-black border-gray-400 py-2 px-4 rounded-md" type="text"
+                            name="address" id="address">
+                    </label>
                     <button
                         class="bg-slate-200 my-4 self-end text-slate-900 font-bold py-2 px-8 rounded-md hover:bg-slate-900 hover:text-slate-100 transition-all">Signup</button>
                 </form>
                 <div class="flex gap-2 flex-col text-sm  max-w-52">
-                    <a href="{{ route('login') }}">Already have an account?</a>
-                    <a href="{{ route('homepage') }}">Go back to homepage</a>
+                    <a class="hover:font-semibold transition-all" href="{{ route('login') }}">Already have an
+                        account?</a>
+                    <a class="hover:font-semibold transition-all" href="{{ route('homepage') }}">Go back to homepage</a>
                 </div>
             </div>
             <div class="p-8">
