@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <section class="h-screen bg-slate-100 flex justify-center items-center">
-        <div class="bg-white rounded-lg shadow-lg flex">
+    <section class="h-screen bg-slate-100 flex justify-center items-center ">
+        <div class="bg-white rounded-lg shadow-lg flex max-w-5xl">
             <div class="bg-green-600 rounded-lg text-white p-8 flex flex-col">
                 <h1 class="font-bold text-4xl text-white max-w-sm mb-6">Register account</h1>
                 <form action="" class="flex flex-wrap max-w-4xl gap-4 mb-8">
