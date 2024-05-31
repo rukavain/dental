@@ -1,4 +1,7 @@
 @extends('components.layout')
+@section('title')
+    | Home
+@endsection
 @section('content')
     <section class="flex py-8 flex-wrap justify-between md:justify-center mx-4 items-center ">
         <div class="bg-white flex flex-col py-11 px-12 mx-8 rounded-lg shadow-lg gap-6 md:max-w-lg h-full">

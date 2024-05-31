@@ -22,13 +22,15 @@
             </div>
         </div>
         <div class="flex gap-6 justify-center items-center">
-            <h1 class="font-bold">Login</h1>
+            <a href="{{ route('login') }}">
+                <h1 class="font-bold">Login</h1>
+            </a>
+
             <a href="{{ route('request-appointment') }}">
                 <h1
                     class="py-2 px-4 rounded-md text-white font-semibold bg-green-600 hover:bg-green-700 transition-all cursor-pointer">
                     BOOK NOW</h1>
             </a>
-
         </div>
     </div>
 </body>

@@ -14,4 +14,12 @@ class UserController extends Controller
     {
         return view('homepage');
     }
+    public function login()
+    {
+        return view('login');
+    }
+    public function register()
+    {
+        return view('register');
+    }
 }
