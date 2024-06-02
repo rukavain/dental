@@ -8,18 +8,18 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('request-appointment');
+        return view('client.request-appointment');
     }
     public function mainpage()
     {
-        return view('homepage');
+        return view('client.homepage');
     }
     public function login()
     {
-        return view('login');
+        return view('account.login');
     }
     public function register()
     {
-        return view('register');
+        return view('account.register');
     }
 }
