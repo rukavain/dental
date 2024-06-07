@@ -9,7 +9,15 @@
 </head>
 
 <body>
+    <section class="h-screen bg-slate-100">
+        <div>
+            @include('components.sidebar')
+        </div>
+        <div>
 
+        </div>
+    </section>
+    @include('components.footer')
 </body>
 
 </html>

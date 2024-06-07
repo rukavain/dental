@@ -22,4 +22,7 @@ class UserController extends Controller
     {
         return view('account.register');
     }
+    public function dashboard(){
+        return view('admin.dashboard');
+    }
 }

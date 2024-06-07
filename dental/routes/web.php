@@ -12,3 +12,5 @@ Route::get('/request-appointment', [UserController::class, 'index'])->name('requ
 Route::get('/homepage', [UserController::class, 'mainpage'])->name('homepage');
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::get('/admin-dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
