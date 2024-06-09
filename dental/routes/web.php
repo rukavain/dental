@@ -7,10 +7,15 @@ Route::get('/', function () {
     return view('client.homepage');
 });
 
-//Routes for REDIRECTION og pages
+//Routes for REDIRECTION of pages
+
+//client routes
 Route::get('/request-appointment', [UserController::class, 'index'])->name('request-appointment');
 Route::get('/homepage', [UserController::class, 'mainpage'])->name('homepage');
+
+//account login/registration routes
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/register', [UserController::class, 'register'])->name('register');
-Route::get('/admin-dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
+//admin routes
+Route::get('/admin-dashboard', [UserController::class, 'dashboard'])->name('dashboard');

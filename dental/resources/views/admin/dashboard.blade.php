@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>{{ config('app.name') }} | Dashboard </title>
+    <link rel="icon" href="{{ asset('/images/logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    @vite('resources/css/app.css')
 </head>
 
 <body>
@@ -14,7 +15,7 @@
             @include('components.sidebar')
         </div>
         <div>
-
+            @include('admin.content.overview')
         </div>
     </section>
     @include('components.footer')

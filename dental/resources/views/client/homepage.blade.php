@@ -120,5 +120,7 @@
             </div>
         </div>
     </section>
+
     @include('components.location')
+    @include('components.footer')
 @endsection
