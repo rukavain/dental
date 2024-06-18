@@ -122,5 +122,9 @@
     </section>
 
     @include('components.location')
+    <div class="w-full flex justify-center items-center">
+        @include('components.contact')
+    </div>
+
     @include('components.footer')
 @endsection

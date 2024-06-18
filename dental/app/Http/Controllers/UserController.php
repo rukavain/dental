@@ -34,4 +34,8 @@ class UserController extends Controller
     {
         return view('admin.content.patients');
     }
+    public function addPatient()
+    {
+        return view('admin.forms.add-patient');
+    }
 }

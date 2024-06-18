@@ -32,6 +32,12 @@
                         Patient list
                     </button>
                 </a>
+                <a class="flex justify-center items-center gap-2" href="{{ route('add-patient') }}">
+                    <img class="h-8" src="{{ asset('images/add-patient.png') }}" alt="">
+                    <button class="hover:font-bold transition-all">
+                        Add patient
+                    </button>
+                </a>
             </div>
         </div>
         <a class="flex justify-center self-start     gap-2" href="">

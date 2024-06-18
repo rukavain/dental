@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <hr>
     <footer class="flex flex-col justify-center items-center py-8 px-4 z-20">
         <section
             class="flex  gap-20 max-md:gap-4 max-md:hidden max-md:text-sm justify-evenly w-full items-start py-4 mb-12">

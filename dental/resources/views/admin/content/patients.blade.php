@@ -1,6 +1,6 @@
 @extends('admin.dashboard')
 @section('content')
-    <div class="m-4">
+    <div class="m-4 mb-8">
         @include('components.search')
     </div>
     <section class="m-4 p-4 bg-white shadow-lg rounded-md">
@@ -17,13 +17,13 @@
             <div>
                 <button>
                     <a class="bg-green-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-green-800 transition-all"
-                        href="">
+                        href="{{ route('add-patient') }}">
                         Add patient
                     </a>
                 </button>
             </div>
         </div> <!-- run @/foreach for each field/row  -->
-        <div class="flex justify-around mx-3 gap-4  mt-8 bg-gray-100 p-4 w-full">
+        <div class="flex justify-around mx-3 gap-4  mt-8 bg-gray-50 p-4 w-full">
             <div class="flex flex-col justify-center items-start">
                 <h1 class="font-semibold text-xl mb-4">Name</h1>
                 <div class="flex flex-col gap-2"> <!-- ID name from form inputs -->

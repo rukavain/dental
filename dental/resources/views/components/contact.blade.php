@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
 </head>
-<section class="flex flex-col justify-center items-center my-8">
+<section class="flex flex-col justify-center items-center my-8 shadow-lg rounded-md min-w-3xl max-w-max">
     <form class="flex justify-center items-center flex-col max-w-3xl bg-white p-8 rounded-md ">
         <h1 class="t-slate-900 font-bold text-6xl text-center">Contact Us</h1>
         <h1 class="text-center my-4 ">
