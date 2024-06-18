@@ -17,7 +17,7 @@
             <div>
                 <button>
                     <a class="bg-green-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-green-800 transition-all"
-                        href="{{ route('add-patient') }}">
+                        href="{{ route('add-patient-page') }}">
                         Add patient
                     </a>
                 </button>

@@ -22,4 +22,5 @@ Route::get('/admin-overview', [UserController::class, 'overview'])->name('overvi
 Route::get('/admin-patient-list', [UserController::class, 'patients'])->name('patients');
 
 //admin route forms
-Route::get('/admin-add-patient', [UserController::class, 'addPatient'])->name('add-patient');
+Route::get('/admin-add-patient', [UserController::class, 'addPatient'])->name('add-patient-page');
+Route::post('/patients', [UserController::class, 'storePatient'])->name('add.patient');

@@ -3,86 +3,83 @@
     <div class="m-4 mb-8">
         @include('components.search')
     </div>
-    <section class="bg-white shadow-lg rounded-md p-6 m-6">
+    <section class="bg-white shadow-lg rounded-md max-w-max p-6 m-6">
         <h1 class="font-bold text-5xl p-4">Add new patient</h1>
-        <form action="">
-            @method('')
+        <form method="POST" action="{{ route('add.patient') }}">
+            @method('POST')
             @csrf
             <div class="flex flex-wrap items-start justify-start gap-8 max-w-4xl p-8">
                 <label for="firstname">
                     <h1>First name</h1>
-                    <input class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="firstname" placeholder="Juan">
+                    <input class="border border-gray-400 py-2 px-4 rounded-md" name="firstname" type="text" id="firstname"
+                        placeholder="Juan">
                 </label>
                 <label for="lastname">
                     <h1>Last name</h1>
-                    <input class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="lastname"
+                    <input class="border border-gray-400 py-2 px-4 rounded-md" name="lastname" type="text" id="lastname"
                         placeholder="Dela Cruz">
                 </label>
                 <label for="gender">
                     <h1>Gender</h1>
-                    <select class="border border-gray-400 py-2 px-4 rounded-md" type="dropdown" id="gender"
-                        id="time">
-                        <option value="">Male</option>
-                        <option value="">Female</option>
-                        <option value="">Others</option>
-                        <option value="">Prefer not to say</option>
+                    <select class="border border-gray-400 py-2 px-4 rounded-md" name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Others</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
                     </select>
                 </label>
-                <label for="date-of-birth">
+                <label for="date_of_birth">
                     <h1>Date of birth</h1>
-                    <input class="border border-gray-400 py-2 px-4 rounded-md" type="date" id="date-of-birth">
+                    <input class="border border-gray-400 py-2 px-4 rounded-md" name="date_of_birth" type="date"
+                        id="date_of_birth">
                 </label>
-                <label for="facebookname">
+                <label for="facebook_name">
                     <h1>Facebook name</h1>
-                    <input class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="facebookname"
-                        placeholder="Dela Cruz">
+                    <input class="border border-gray-400 py-2 px-4 rounded-md" name="facebook_name" type="text"
+                        id="facebook_name" placeholder="Dela Cruz">
                 </label>
                 <label for="Package">
                     <h1>Package</h1>
-                    <select class="border border-gray-400 py-2 px-4 rounded-md" type="dropdown" id="package"
-                        id="package">
-                        <option value="">Package A</option>
-                        <option value="">Package B</option>
-                        <option value="">Package C</option>
-                        <option value="">Package D</option>
-                        <option value="">Package E</option>
+                    <select class="border border-gray-400 py-2 px-4 rounded-md" name="package" id="package">
+                        <option value="a">Package A</option>
+                        <option value="b">Package B</option>
+                        <option value="c">Package C</option>
+                        <option value="d">Package D</option>
+                        <option value="e">Package E</option>
                     </select>
                 </label>
-                <label for="phone-number">
+                <label for="phone_number">
                     <h1>Phone number</h1>
-                    <input class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="phone-number">
+                    <input class="border border-gray-400 py-2 px-4 rounded-md" name="phone_number" type="text"
+                        id="phone_number">
                 </label>
-                <label for="date-of-next-visit">
+                <label for="date_of_next_visit">
                     <h1>Date of next visit</h1>
-                    <input class="border border-gray-400 py-2 px-4 rounded-md" type="date" id="date-of-next-visit">
+                    <input class="border border-gray-400 py-2 px-4 rounded-md" name="date_of_next_visit" type="date"
+                        id="date_of_next_visit">
                 </label>
 
                 <label class="w-full" for="address">
                     <h1>Address</h1>
-                    <input class="border border-gray-400 py-2 px-4 rounded-md min-w-full" type="text" id="address"
-                        placeholder="123 Sparkling Street, Dentopolis, Smileville, USA">
+                    <input class="border border-gray-400 py-2 px-4 rounded-md min-w-full" name="address" type="text"
+                        id="address" placeholder="123 Sparkling Street, Dentopolis, Smileville, USA">
                 </label>
                 <div class="flex gap-4 mt-4">
-                    <a href="">
-                        <button
-                            class="py-4 px-8 font-semibold rounded-md bg-green-600 text-white hover:bg-green-700 transition-all"
-                            type="submit">
-                            Add patient
-                        </button>
-                    </a>
-                    <a href="">
-                        <button
-                            class="py-4 px-8 font-semibold rounded-md bg-red-600 text-white hover:bg-red-700 transition-all"
-                            type="submit">
-                            Cancel
-                        </button>
-                    </a>
+                    <button
+                        class="py-4 px-8 font-semibold rounded-md bg-green-600 text-white hover:bg-green-700 transition-all"
+                        type="submit">
+                        Add patient
+                    </button>
+                    <button class="py-4 px-8 font-semibold rounded-md bg-red-600 text-white hover:bg-red-700 transition-all"
+                        type="reset">
+                        Cancel
+                    </button>
                 </div>
             </div>
         </form>
     </section>
     <script>
         const today = new Date().toISOString().split('T')[0];
-        document.getElementById('date-of-next-visit').setAttribute('min', today);
+        document.getElementById('date_of_next_visit').setAttribute('min', today);
     </script>
 @endsection
