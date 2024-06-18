@@ -22,7 +22,16 @@ class UserController extends Controller
     {
         return view('account.register');
     }
-    public function dashboard(){
+    public function dashboard()
+    {
         return view('admin.dashboard');
+    }
+    public function overview()
+    {
+        return view('admin.content.overview');
+    }
+    public function patients()
+    {
+        return view('admin.content.patients');
     }
 }

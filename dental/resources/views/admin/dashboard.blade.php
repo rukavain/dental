@@ -10,14 +10,15 @@
 </head>
 
 <body>
-    <section class="h-screen bg-slate-100">
+    <section class="h-screen w-full  bg-slate-100 flex justify-start">
         <div>
             @include('components.sidebar')
         </div>
-        <div>
-            @include('admin.content.overview')
+        <div class="w-full">
+            @yield('content')
         </div>
     </section>
+    <hr>
     @include('components.footer')
 </body>
 

@@ -10,20 +10,23 @@
 </head>
 
 <body class="">
-    <nav class="absolute left-0 bg-white z-0 flex flex-col justify-between items-center py-4 px-8 h-full">
+    <nav
+        class="max-w-max min-w-max self-start h-screen bg-white z-0 flex flex-col justify-between items-center py-4 px-8">
         <div class="flex flex-col gap-4">
             <div class="flex justify-start items-center gap-2 mb-4">
-                <img class="h-10" src="{{ asset('images/logo.png') }}" alt="">
+                <a href="{{ route('homepage') }}">
+                    <img class="h-10" src="{{ asset('images/logo.png') }}" alt="">
+                </a>
                 <h1 class="text-sm">Tooth Impressions Dental Clinic</h1>
             </div>
             <div class="flex flex-col items-start gap-4">
-                <a class="flex justify-center items-center gap-2" href="">
+                <a class="flex justify-center items-center gap-2" href="{{ route('overview') }}">
                     <img class="h-8" src="{{ asset('images/dashboard-icon.png') }}" alt="">
                     <button class="hover:font-bold transition-all">
                         Dashboard
                     </button>
                 </a>
-                <a class="flex justify-center items-center gap-2" href="">
+                <a class="flex justify-center items-center gap-2" href="{{ route('patients') }}">
                     <img class="h-8" src="{{ asset('images/patient-list-icon.png') }}" alt="">
                     <button class="hover:font-bold transition-all">
                         Patient list

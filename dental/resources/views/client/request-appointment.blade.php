@@ -81,5 +81,7 @@
             document.getElementById('date').setAttribute('min', today);
         </script>
     </section>
+
     @include('components.location')
+    @include('components.footer')
 @endsection

@@ -18,4 +18,5 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 //admin routes
-Route::get('/admin-dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+Route::get('/admin-overview', [UserController::class, 'overview'])->name('overview');
+Route::get('/admin-patient-list', [UserController::class, 'patients'])->name('patients');
