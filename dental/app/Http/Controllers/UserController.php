@@ -60,6 +60,13 @@ class UserController extends Controller
     {
         return view('admin.content.overview');
     }
+    public function updatePatientPage(Patient $patient)
+    {
+        return view('admin.forms.update-patient', [
+            'patient' => $patient,
+            'editing' => true
+        ]);
+    }
     public function patients(Request $request)
     {
         $patientQuery = Patient::query();
@@ -95,9 +102,9 @@ class UserController extends Controller
         ]);
     }
 
-    public function updatePatient(Patient $patient)
+    public function updatePatient(Request $request, Patient $patient)
     {
-        request()->validate([
+        $validated = $request->validate([
             'firstname' => 'required|min:3|max:254',
             'lastname' => 'required|min:3|max:254',
             'gender' => 'required',
@@ -109,20 +116,11 @@ class UserController extends Controller
             'address' => 'required|string|max:500'
         ]);
 
-        $patient->update([
-            'firstname' => request('firstname'),
-            'lastname' => request('lastname'),
-            'gender' => request('gender'),
-            'date_of_birth' => request('date_of_birth'),
-            'facebook_name' => request('facebook_name'),
-            'package' => request('package'),
-            'phone_number' => request('phone_number'),
-            'date_of_next_visit' => request('date_of_next_visit'),
-            'address' => request('address'),
-        ]);
+        $patient->update($validated);
 
         return redirect()->route('patient.list');
     }
+
 
     public function addPatient()
     {

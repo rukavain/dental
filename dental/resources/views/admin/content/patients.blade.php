@@ -1,6 +1,7 @@
 @extends('admin.dashboard')
 @section('content')
     <style>
+        /* styling for contact tooltips */
         .tooltip {
             position: relative;
             display: inline-block;
@@ -61,7 +62,7 @@
         <div class="flex justify-around mx-3 gap-4  mt-8 bg-gray-50 p-4 w-full">
             <div class="flex flex-col justify-center items-start">
                 <h1 class="font-semibold text-xl mb-4">ID</h1>
-                <div class="flex flex-col gap-2"> <!-- ID name from form inputs -->
+                <div class="flex flex-col gap-6">
                     @foreach ($patients as $patient)
                         <h1> {{ $patient->id }} </h1>
                     @endforeach
@@ -69,7 +70,7 @@
             </div>
             <div class="flex flex-col justify-center items-start">
                 <h1 class="font-semibold text-xl mb-4">Name</h1>
-                <div class="flex flex-col gap-2"> <!-- ID name from form inputs -->
+                <div class="flex flex-col gap-6">
                     @foreach ($patients as $patient)
                         <h1> {{ $patient->firstname }} {{ $patient->lastname }} </h1>
                     @endforeach
@@ -77,7 +78,7 @@
             </div>
             <div class="flex flex-col justify-center items-start">
                 <h1 class="font-semibold text-xl mb-4">Date of next visit</h1>
-                <div class="flex flex-col gap-2"> <!-- ID from form inputs -->
+                <div class="flex flex-col gap-6">
                     @foreach ($patients as $patient)
                         <h1> {{ $patient->date_of_next_visit }}</h1>
                     @endforeach
@@ -85,7 +86,7 @@
             </div>
             <div class="flex flex-col justify-center items-start">
                 <h1 class="font-semibold text-xl mb-4">Package</h1>
-                <div class="flex flex-col gap-2"> <!-- ID from form inputs -->
+                <div class="flex flex-col gap-6">
                     @foreach ($patients as $patient)
                         <h1> {{ $patient->package }}</h1>
                     @endforeach
@@ -93,9 +94,9 @@
             </div>
             <div class="flex flex-col justify-center items-start ">
                 <h1 class="font-semibold text-xl mb-4 justify-self-start">Contacts</h1>
-                <div class="flex flex-col items-center justify-center gap-2">
+                <div class="flex flex-col items-center justify-center gap-6">
                     @foreach ($patients as $patient)
-                        <div class="flex gap-4">
+                        <div class="flex gap-6">
                             <div class="tooltip">
                                 <img class="h-6" src="{{ asset('images/call-icon.png') }}" alt="Call Icon">
                                 <span class="tooltiptext">{{ $patient->phone_number }}</span>
@@ -109,12 +110,19 @@
                 </div>
             </div>
             <div class="flex flex-col justify-center items-start">
-                <h1 class="font-semibold text-xl mb-4">ID</h1>
-                <div class="flex flex-col gap-4"> <!-- ID name from form inputs -->
+                <h1 class="font-semibold text-xl mb-4">Actions</h1>
+                <div class="flex flex-col gap-2">
                     @foreach ($patients as $patient)
-                        <a href="">
-                            Update
-                        </a>
+                        <div class="flex gap-4">
+                            <a class="bg-green-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-green-800 transition-all"
+                                href=" {{ route('update.patient.page', $patient->id) }} ">
+                                Update
+                            </a>
+                            <a
+                                class="bg-gray-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-800 transition-all">
+                                Archive
+                            </a>
+                        </div>
                     @endforeach
                 </div>
             </div>
