@@ -4,36 +4,114 @@
         @include('components.search')
     </div>
 
-    <section class="bg-white m-4 p-8 shadow-lg rounded-md flex justify-between">
-        <div>
-            <h1 class="text-4xl font-bold mb-6">Patient Name: {{ $patient->firstname }} {{ $patient->lastname }} </h1>
-            <div class=" text-md">
-                <h1> Gender: {{ $patient->gender }} </h1>
-                <h1> Birth date: {{ $patient->date_of_birth }} </h1>
-                <h1> Facebook name: {{ $patient->facebook_name }} </h1>
-                <h1> Package availed: {{ $patient->package }} </h1>
-                <h1> Phone number: {{ $patient->phone_number }} </h1>
-                <h1> Date of next visit: {{ $patient->date_of_next_visit }} </h1>
-                <h1> Address: {{ $patient->address }} </h1>
+    <section class="bg-white m-4 p-8 shadow-lg rounded-md flex flex-col justify-center">
+        <div class="flex justify-between">
+            <div>
+                <h1 class="text-4xl font-bold mb-6">Patient Name: {{ $patient->firstname }} {{ $patient->lastname }} </h1>
+                <div class=" text-md">
+                    <h1> Gender: <span class="font-semibold"> {{ $patient->gender }} </span> </h1>
+                    <h1> Birth date: <span class="font-semibold"> {{ $patient->date_of_birth }} </span> </h1>
+                    <h1> Facebook name: <span class="font-semibold"> {{ $patient->facebook_name }} </span> </h1>
+                    <h1> Package availed: <span class="font-semibold"> {{ $patient->package }} </span> </h1>
+                    <h1> Phone number: <span class="font-semibold"> {{ $patient->phone_number }} </span> </h1>
+                    <h1> Date of next visit: <span class="font-semibold"> {{ $patient->date_of_next_visit }} </span> </h1>
+                    <h1> Address: <span class="font-semibold"> {{ $patient->address }} </span> </h1>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4 ">
+                <a href=" {{ route('update.patient.page', $patient->id) }} "
+                    class="bg-gray-600 rounded-md text-center p-4 text-white font-semibold hover:bg-gray-800 transition-all">Edit
+                    patient information</a>
+                <a href=""
+                    class="bg-gray-600 rounded-md p-4 text-center text-white font-semibold hover:bg-gray-800 transition-all">
+                    View Patient Contract</a>
+                <a href=""
+                    class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
+                    View Background of the patient</a>
+                <a href=""
+                    class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
+                    View X-rays</a>
+                <a class="bg-green-600 rounded-md p-4 text-white text-center font-semibold hover:bg-green-800 transition-all"
+                    href=" {{ route('patient.list') }} ">
+                    Go back
+                </a>
             </div>
         </div>
-        <div class="flex flex-col gap-4 ">
-            <a href=" {{ route('update.patient.page', $patient->id) }} "
-                class="bg-gray-600 rounded-md text-center p-4 text-white font-semibold hover:bg-gray-800 transition-all">Edit
-                patient information</a>
-            <a href=""
-                class="bg-gray-600 rounded-md p-4 text-center text-white font-semibold hover:bg-gray-800 transition-all">
-                View Patient Contract</a>
-            <a href=""
-                class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
-                View Background of the patient</a>
-            <a href=""
-                class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
-                View X-rays</a>
-            <a class="bg-green-600 rounded-md p-4 text-white text-center font-semibold hover:bg-green-800 transition-all"
-                href=" {{ route('patient.list') }} ">
-                Go back
-            </a>
+        <div class="p-4 m-4">
+            <h1 class="my-9 font-bold text-4xl">Summary of records</h1>
+            <div class="flex justify-between items-evenly">
+                <div>
+                    <h1 class="font-bold mb-6"> Date Visited </h1>
+                    <div class="flex flex-col gap-4">
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-bold mb-6"> Tooth Number </h1>
+                    <div class="flex flex-col gap-4">
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-bold mb-6"> Procedure Done </h1>
+                    <div class="flex flex-col gap-4">
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-bold mb-6"> Charge </h1>
+                    <div class="flex flex-col gap-4">
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-bold mb-6"> Paid </h1>
+                    <div class="flex flex-col gap-4">
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-bold mb-6"> Balance remaining </h1>
+                    <div class="flex flex-col gap-4">
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                        <h1>Sample data only</h1>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-bold mb-6"> Signature </h1>
+                    <div class="flex flex-col gap-4">
+                        <h1>Signed</h1>
+                        <h1>Signed</h1>
+                        <h1>Signed</h1>
+                        <h1>Signed</h1>
+                        <h1>Signed</h1>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
