@@ -24,3 +24,4 @@ Route::get('/admin-patient-list', [UserController::class, 'patients'])->name('pa
 //admin route forms
 Route::get('/admin-add-patient', [UserController::class, 'addPatient'])->name('add-patient-page');
 Route::post('/patients', [UserController::class, 'storePatient'])->name('add.patient');
+Route::put('/patients/{patient}', [UserController::class, 'updatePatient'])->name('update.patient');

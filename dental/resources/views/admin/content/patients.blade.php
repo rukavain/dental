@@ -37,12 +37,17 @@
         <div class="flex items-center justify-between ">
             <label class="flex items-center gap-2" for="time">
                 <h1 class="font-bold text-3xl mr-4">Patient list</h1>
-                <h1>Sort by: </h1>
-                <select class="border border-gray-400 py-2 px-4 rounded-md" type="dropdown" id="appointment-date"
-                    id="time">
-                    <option value="">Date added</option>
-                    <option value="">Next visit</option>
-                </select>
+                <form method="GET" action="{{ route('patient.list') }}" class="flex gap-4 items-center justify-center my-4">
+                    <h1>Sort by: </h1>
+                    <select name="sort" class="border border-gray-400 py-2 px-4 rounded-md" id="sort">
+                        <option value="date_added" {{ request()->get('sort') == 'date_added' ? 'selected' : '' }}>Date added
+                        </option>
+                        <option value="date_of_next_visit"
+                            {{ request()->get('sort') == 'date_of_next_visit' ? 'selected' : '' }}>Next visit</option>
+                        <option value="id" {{ request()->get('sort') == 'id' ? 'selected' : '' }}>ID</option>
+                        <option value="name" {{ request()->get('sort') == 'name' ? 'selected' : '' }}>Name</option>
+                    </select>
+                </form>
             </label>
             <div>
                 <button>
@@ -103,6 +108,21 @@
                     @endforeach
                 </div>
             </div>
+            <div class="flex flex-col justify-center items-start">
+                <h1 class="font-semibold text-xl mb-4">ID</h1>
+                <div class="flex flex-col gap-4"> <!-- ID name from form inputs -->
+                    @foreach ($patients as $patient)
+                        <a href="">
+                            Update
+                        </a>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </section>
+    <script>
+        document.getElementById('sort').addEventListener('change', function() {
+            this.form.submit();
+        });
+    </script>
 @endsection
