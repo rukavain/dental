@@ -19,7 +19,6 @@
             position: absolute;
             z-index: 1;
             bottom: 125%;
-            /* Position above the icon */
             left: 50%;
             margin-left: -60px;
             opacity: 0;
@@ -118,9 +117,9 @@
                                 href=" {{ route('update.patient.page', $patient->id) }} ">
                                 Update
                             </a>
-                            <a
+                            <a href=" {{ route('show.patient', $patient->id) }} "
                                 class="bg-gray-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-800 transition-all">
-                                Archive
+                                View
                             </a>
                         </div>
                     @endforeach

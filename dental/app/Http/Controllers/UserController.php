@@ -56,15 +56,26 @@ class UserController extends Controller
     {
         return view('admin.dashboard');
     }
-    public function overview()
+    public function overview(Patient $patient)
     {
-        return view('admin.content.overview');
+        $patients = Patient::all();
+        $totalPatients = Patient::count();
+        return view(
+            'admin.content.overview',
+            ['totalPatients' => $totalPatients]
+        );
     }
     public function updatePatientPage(Patient $patient)
     {
         return view('admin.forms.update-patient', [
             'patient' => $patient,
             'editing' => true
+        ]);
+    }
+    public function showPatient(Patient $patient)
+    {
+        return view('admin.content.patient-information', [
+            'patient' => $patient
         ]);
     }
     public function patients(Request $request)
@@ -78,7 +89,6 @@ class UserController extends Controller
                     ->orWhere('firstname', 'like', '%' . $searchTerm . '%');
             });
         }
-
 
         if ($request->has('sort')) {
             $sortOption = $request->get('sort');
@@ -98,7 +108,7 @@ class UserController extends Controller
         $patients = $patientQuery->paginate(20);
 
         return view('admin.content.patients', [
-            'patients' => $patients
+            'patients' => $patients,
         ]);
     }
 

@@ -14,8 +14,10 @@
             <div class="flex gap-8">
                 <div
                     class="flex w-max h-48 py-4 px-2 justify-start border border-gray-700 items-center flex-col gap-2 rounded-md ">
-                    <h1 class="text-md font-semibold">Patients per month</h1>
-                    <h1 class="text-4xl font-bold">N</h1>
+                    <h1 class="text-md font-semibold">Total of patients</h1>
+                    <h1 class="text-4xl font-bold">
+                        {{ $totalPatients }}
+                    </h1>
                 </div>
                 <div
                     class="flex w-max h-48 py-4 px-2 justify-start border border-gray-700 items-center flex-col gap-2 rounded-md ">

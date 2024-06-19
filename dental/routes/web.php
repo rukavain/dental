@@ -20,6 +20,7 @@ Route::get('/register', [UserController::class, 'register'])->name('register');
 //admin routes
 Route::get('/admin-overview', [UserController::class, 'overview'])->name('overview');
 Route::get('/admin-patient-list', [UserController::class, 'patients'])->name('patient.list');
+Route::get('/patient-information/{patient}', [UserController::class, 'showPatient'])->name('show.patient');
 
 //admin route forms
 Route::get('/admin-add-patient', [UserController::class, 'addPatient'])->name('add-patient-page');
