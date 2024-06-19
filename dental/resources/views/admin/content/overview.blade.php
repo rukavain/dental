@@ -7,7 +7,7 @@
             <h1>Have a nice working day!</h1>
         </div>
         <div class="bg-white shadow-lg rounded-md p-5">
-            <div class=" mb-8">
+            <div class="mb-8">
                 <h1 class="text-4xl font-semibold">Patient Statistics</h1>
                 <h1>Lorem ipsum dolor sit amet, consectetur</h1>
             </div>

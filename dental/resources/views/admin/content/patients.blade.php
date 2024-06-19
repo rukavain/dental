@@ -27,37 +27,29 @@
             <div class="flex flex-col justify-center items-start">
                 <h1 class="font-semibold text-xl mb-4">Name</h1>
                 <div class="flex flex-col gap-2"> <!-- ID name from form inputs -->
-                    <h1 class=""> 1. Angelo Justin Allan Villamin Vinuya</h1>
-                    <h1 class=""> 1. Angelo Justin Allan Villamin Vinuya</h1>
-                    <h1 class=""> 1. Angelo Justin Allan Villamin Vinuya</h1>
+                    @foreach ($patients as $patient)
+                        <h1> {{ $patient->firstname }} {{ $patient->lastname }} </h1>
+                    @endforeach
                 </div>
             </div>
             <div class="flex flex-col justify-center items-start">
-                <h1 class="font-semibold text-xl mb-4">Reason for visit</h1>
+                <h1 class="font-semibold text-xl mb-4">Date of next visit</h1>
                 <div class="flex flex-col gap-2"> <!-- ID from form inputs -->
-                    <h1 class="max-w-sm"> Tooth Extraction </h1>
-                    <h1 class="max-w-sm"> Tooth Extraction </h1>
-                    <h1 class="max-w-sm"> Tooth Extraction </h1>
+                    @foreach ($patients as $patient)
+                        <h1> {{ $patient->date_of_next_visit }}</h1>
+                    @endforeach
                 </div>
             </div>
             <div class="flex flex-col justify-center items-start">
-                <h1 class="font-semibold text-xl mb-4">Last visit</h1>
+                <h1 class="font-semibold text-xl mb-4">Package</h1>
                 <div class="flex flex-col gap-2"> <!-- ID from form inputs -->
-                    <h1 class="max-w-sm"> November 21, 0021 </h1>
-                    <h1 class="max-w-sm"> November 21, 0021 </h1>
-                    <h1 class="max-w-sm"> November 21, 0021 </h1>
+                    @foreach ($patients as $patient)
+                        <h1> {{ $patient->package }}</h1>
+                    @endforeach
                 </div>
             </div>
             <div class="flex flex-col justify-center items-start ">
                 <h1 class="font-semibold text-xl mb-4 justify-self-start">Contacts</h1>
-                <div class="flex items-center justify-center gap-4">
-                    <img class="h-8 cursor-pointer" src="{{ asset('images/email-logo.png') }}" alt="">
-                    <img class="h-8 cursor-pointer" src="{{ asset('images/call-icon.png') }}" alt="">
-                </div>
-                <div class="flex items-center justify-center gap-4">
-                    <img class="h-8 cursor-pointer" src="{{ asset('images/email-logo.png') }}" alt="">
-                    <img class="h-8 cursor-pointer" src="{{ asset('images/call-icon.png') }}" alt="">
-                </div>
                 <div class="flex items-center justify-center gap-4">
                     <img class="h-8 cursor-pointer" src="{{ asset('images/email-logo.png') }}" alt="">
                     <img class="h-8 cursor-pointer" src="{{ asset('images/call-icon.png') }}" alt="">

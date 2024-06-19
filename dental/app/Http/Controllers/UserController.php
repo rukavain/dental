@@ -38,7 +38,7 @@ class UserController extends Controller
         ]);
 
         $patient->save();
-        return redirect()->route('homepage');
+        return redirect()->route('patient.list');
     }
     public function mainpage()
     {
@@ -60,9 +60,20 @@ class UserController extends Controller
     {
         return view('admin.content.overview');
     }
-    public function patients()
+    public function patients(Request $request)
     {
-        return view('admin.content.patients');
+        $patientQuery = Patient::orderBy('created_at', 'ASC');
+
+        if ($request->has('search') && !empty($request->get('search'))) {
+            $searchTerm = $request->get('search');
+            $patientQuery->where('id', 'like', '%' . $searchTerm . '%');
+        }
+
+        $patients = $patientQuery->paginate(20);
+
+        return view('admin.content.patients', [
+            'patients' => $patients
+        ]);
     }
     public function addPatient()
     {

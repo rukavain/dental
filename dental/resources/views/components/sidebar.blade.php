@@ -26,7 +26,7 @@
                         Dashboard
                     </button>
                 </a>
-                <a class="flex justify-center items-center gap-2" href="{{ route('patients') }}">
+                <a class="flex justify-center items-center gap-2" href="{{ route('patient.list') }}">
                     <img class="h-8" src="{{ asset('images/patient-list-icon.png') }}" alt="">
                     <button class="hover:font-bold transition-all">
                         Patient list

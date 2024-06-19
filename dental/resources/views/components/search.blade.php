@@ -9,15 +9,14 @@
     @vite('resources/css/app.css')
 </head>
 <div class="flex justify-between gap-2">
-    <form class=" flex justify-center items-center gap-2" action="">
-        @method('')
+    <form method="GET" class=" flex justify-center items-center gap-2" action="{{ route('patient.list') }}">
         @csrf
         <img class="h-12" src="{{ asset('images/search-icon.png') }}" alt="">
-        <input type="search" class=" py-2 px-4 border-gray-400 rounded-md">
-        <button class="shadow-md py-2 px-6 rounded-md bg-white hover:bg-gray-800 hover:text-white transition-all">
-            <a href="">
-                Search
-            </a>
+        <input placeholder="Search..." autocomplete="off" name="search" type="search"
+            class=" py-2 px-4 border-gray-400 rounded-md">
+        <button type="submit"
+            class="shadow-md py-2 px-6 rounded-md bg-white hover:bg-gray-800 hover:text-white transition-all">
+            Search
         </button>
     </form>
     <div class="flex gap-3 justify-center items-center self-end">
