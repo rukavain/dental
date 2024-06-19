@@ -70,9 +70,16 @@
                         type="submit">
                         Add patient
                     </button>
+                    <button
+                        class="py-4 px-8 font-semibold rounded-md bg-gray-600 text-white hover:bg-gray-700 transition-all"
+                        type="reset">
+                        Reset
+                    </button>
                     <button class="py-4 px-8 font-semibold rounded-md bg-red-600 text-white hover:bg-red-700 transition-all"
                         type="reset">
-                        Cancel
+                        <a href=" {{ route('patient.list') }} ">
+                            Cancel
+                        </a>
                     </button>
                 </div>
             </div>

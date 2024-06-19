@@ -88,10 +88,16 @@
                             Update patient
                         </button>
                         <button
-                            class="py-4 px-8 font-semibold rounded-md bg-red-600 text-white hover:bg-red-700 transition-all"
+                            class="py-4 px-8 font-semibold rounded-md bg-gray-600 text-white hover:bg-gray-700 transition-all"
                             type="reset">
-                            Cancel
+                            Reset
                         </button>
+                        <a href=" {{ route('patient.list') }} ">
+                            <button
+                                class="py-4 px-8 font-semibold rounded-md bg-red-600 text-white hover:bg-red-700 transition-all">
+                                Cancel
+                            </button>
+                        </a>
                     </div>
                 </div>
             </form>
