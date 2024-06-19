@@ -1,5 +1,35 @@
 @extends('admin.dashboard')
 @section('content')
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            /* Position above the icon */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
     <div class="m-4 mb-8">
         @include('components.search')
     </div>
@@ -24,6 +54,14 @@
             </div>
         </div> <!-- run @/foreach for each field/row  -->
         <div class="flex justify-around mx-3 gap-4  mt-8 bg-gray-50 p-4 w-full">
+            <div class="flex flex-col justify-center items-start">
+                <h1 class="font-semibold text-xl mb-4">ID</h1>
+                <div class="flex flex-col gap-2"> <!-- ID name from form inputs -->
+                    @foreach ($patients as $patient)
+                        <h1> {{ $patient->id }} </h1>
+                    @endforeach
+                </div>
+            </div>
             <div class="flex flex-col justify-center items-start">
                 <h1 class="font-semibold text-xl mb-4">Name</h1>
                 <div class="flex flex-col gap-2"> <!-- ID name from form inputs -->
@@ -50,9 +88,19 @@
             </div>
             <div class="flex flex-col justify-center items-start ">
                 <h1 class="font-semibold text-xl mb-4 justify-self-start">Contacts</h1>
-                <div class="flex items-center justify-center gap-4">
-                    <img class="h-8 cursor-pointer" src="{{ asset('images/email-logo.png') }}" alt="">
-                    <img class="h-8 cursor-pointer" src="{{ asset('images/call-icon.png') }}" alt="">
+                <div class="flex flex-col items-center justify-center gap-2">
+                    @foreach ($patients as $patient)
+                        <div class="flex gap-4">
+                            <div class="tooltip">
+                                <img class="h-8" src="{{ asset('images/call-icon.png') }}" alt="Call Icon">
+                                <span class="tooltiptext">{{ $patient->phone_number }}</span>
+                            </div>
+                            <div class="tooltip">
+                                <img class="h-8" src="{{ asset('images/facebook-gray.png') }}" alt="Facebook Icon">
+                                <span class="tooltiptext">{{ $patient->facebook_name }}</span>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
