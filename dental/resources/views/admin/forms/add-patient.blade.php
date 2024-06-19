@@ -12,12 +12,12 @@
                 <label for="firstname">
                     <h1>First name</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="firstname" type="text" id="firstname"
-                        placeholder="Juan">
+                        autocomplete="off" placeholder="Juan">
                 </label>
                 <label for="lastname">
                     <h1>Last name</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="lastname" type="text" id="lastname"
-                        placeholder="Dela Cruz">
+                        autocomplete="off" placeholder="Dela Cruz">
                 </label>
                 <label for="gender">
                     <h1>Gender</h1>
@@ -36,33 +36,33 @@
                 <label for="facebook_name">
                     <h1>Facebook name</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="facebook_name" type="text"
-                        id="facebook_name" placeholder="Dela Cruz">
+                        autocomplete="off" id="facebook_name" placeholder="Dela Cruz">
                 </label>
                 <label for="Package">
                     <h1>Package</h1>
                     <select class="border border-gray-400 py-2 px-4 rounded-md" name="package" id="package">
-                        <option value="a">Package A</option>
-                        <option value="b">Package B</option>
-                        <option value="c">Package C</option>
-                        <option value="d">Package D</option>
-                        <option value="e">Package E</option>
+                        <option value="A">Package A</option>
+                        <option value="B">Package B</option>
+                        <option value="C">Package C</option>
+                        <option value="D">Package D</option>
+                        <option value="E">Package E</option>
                     </select>
                 </label>
                 <label for="phone_number">
                     <h1>Phone number</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="phone_number" type="text"
-                        id="phone_number">
+                        autocomplete="off" id="phone_number">
                 </label>
                 <label for="date_of_next_visit">
                     <h1>Date of next visit</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="date_of_next_visit" type="date"
-                        id="date_of_next_visit">
+                        autocomplete="off" id="date_of_next_visit">
                 </label>
 
                 <label class="w-full" for="address">
                     <h1>Address</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md min-w-full" name="address" type="text"
-                        id="address" placeholder="123 Sparkling Street, Dentopolis, Smileville, USA">
+                        autocomplete="off" id="address" placeholder="123 Sparkling Street, Dentopolis, Smileville, USA">
                 </label>
                 <div class="flex gap-4 mt-4">
                     <button

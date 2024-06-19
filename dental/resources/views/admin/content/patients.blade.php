@@ -97,11 +97,11 @@
                     @foreach ($patients as $patient)
                         <div class="flex gap-4">
                             <div class="tooltip">
-                                <img class="h-8" src="{{ asset('images/call-icon.png') }}" alt="Call Icon">
+                                <img class="h-6" src="{{ asset('images/call-icon.png') }}" alt="Call Icon">
                                 <span class="tooltiptext">{{ $patient->phone_number }}</span>
                             </div>
                             <div class="tooltip">
-                                <img class="h-8" src="{{ asset('images/facebook-gray.png') }}" alt="Facebook Icon">
+                                <img class="h-6" src="{{ asset('images/facebook-gray.png') }}" alt="Facebook Icon">
                                 <span class="tooltiptext">{{ $patient->facebook_name }}</span>
                             </div>
                         </div>

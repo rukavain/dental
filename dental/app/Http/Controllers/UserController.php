@@ -66,8 +66,12 @@ class UserController extends Controller
 
         if ($request->has('search') && !empty($request->get('search'))) {
             $searchTerm = $request->get('search');
-            $patientQuery->where('lastname', 'like', '%' . $searchTerm . '%');
+            $patientQuery->where(function ($query) use ($searchTerm) {
+                $query->where('lastname', 'like', '%' . $searchTerm . '%')
+                    ->orWhere('firstname', 'like', '%' . $searchTerm . '%');
+            });
         }
+
 
         if ($request->has('sort')) {
             $sortOption = $request->get('sort');
@@ -78,7 +82,7 @@ class UserController extends Controller
             } elseif ($sortOption == 'id') {
                 $patientQuery->orderBy('id', 'ASC');
             } elseif ($sortOption == 'name') {
-                $patientQuery->orderBy('firstname', 'ASC')->orderBy('lastname', 'ASC');
+                $patientQuery->orderBy('lastname', 'ASC')->orderBy('firstname', 'ASC');
             }
         } else {
             $patientQuery->orderBy('created_at', 'ASC');
