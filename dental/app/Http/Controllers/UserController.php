@@ -74,9 +74,10 @@ class UserController extends Controller
     }
     public function showPatient(Patient $patient)
     {
-        return view('admin.content.patient-information', [
-            'patient' => $patient
-        ]);
+
+        $payments = $patient->payments; // Assuming the Patient model has a payments relationship
+
+        return view('admin.content.patient-information', compact('patient', 'payments'));
     }
     public function patients(Request $request)
     {
@@ -130,8 +131,6 @@ class UserController extends Controller
 
         return redirect()->route('patient.list');
     }
-
-
     public function addPatient()
     {
         return view('admin.forms.add-patient');

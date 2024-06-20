@@ -4,7 +4,7 @@
         @include('components.search')
     </div>
 
-    <section class="bg-white m-4 p-8 shadow-lg rounded-md flex flex-col justify-center">
+    <section class="bg-white m-4 p-8 shadow-lg rounded-md flex flex-col justify-center z-0">
         <div class="flex justify-between">
             <div>
                 <h1 class="text-5xl font-bold mb-6">{{ $patient->firstname }} {{ $patient->lastname }} </h1>
@@ -18,8 +18,8 @@
                     <h1> Address: <span class="font-semibold"> {{ $patient->address }} </span> </h1>
                 </div>
             </div>
-            <div class="flex flex-col gap-4 ">
-                <a href=" {{ route('update.patient.page', $patient->id) }} "
+            <div class="flex flex-col gap-4">
+                <a href="{{ route('update.patient.page', $patient->id) }}"
                     class="bg-gray-600 rounded-md text-center p-4 text-white font-semibold hover:bg-gray-800 transition-all">Edit
                     patient information</a>
                 <a href=""
@@ -31,86 +31,69 @@
                 <a href=""
                     class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
                     View X-rays</a>
+                <a href="{{ route('add.payment.page', $patient->id) }}"
+                    class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
+                    Add payment</a>
                 <a class="bg-green-600 rounded-md p-4 text-white text-center font-semibold hover:bg-green-800 transition-all"
-                    href=" {{ route('patient.list') }} ">
+                    href="{{ route('patient.list') }}">
                     Go back
                 </a>
             </div>
         </div>
-        <div class="p-4 m-4">
-            <h1 class="my-9 font-bold text-4xl">Summary of records</h1>
-            <div class="flex justify-between items-evenly">
-                <div>
-                    <h1 class="font-bold mb-6"> Date Visited </h1>
-                    <div class="flex flex-col gap-4">
-                        <h1> 2024 - 03 - 04 </h1>
-                        <h1> 2024 - 03 - 04 </h1>
-                        <h1> 2024 - 03 - 04 </h1>
-                        <h1> 2024 - 03 - 04 </h1>
-                        <h1> 2024 - 03 - 04 </h1>
-                    </div>
-                </div>
-                <div>
-                    <h1 class="font-bold mb-6"> Tooth Number </h1>
-                    <div class="flex flex-col gap-4">
-                        <h1>4</h1>
-                        <h1>5</h1>
-                        <h1>1</h1>
-                        <h1>3</h1>
-                        <h1>8</h1>
-                    </div>
-                </div>
-                <div>
-                    <h1 class="font-bold mb-6"> Procedure Done </h1>
-                    <div class="flex flex-col gap-4">
-                        <h1>Ortho</h1>
-                        <h1>Ortho</h1>
-                        <h1>Ortho</h1>
-                        <h1>Ortho</h1>
-                        <h1>Ortho</h1>
-                    </div>
-                </div>
-                <div>
-                    <h1 class="font-bold mb-6"> Charge </h1>
-                    <div class="flex flex-col gap-4">
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                    </div>
-                </div>
-                <div>
-                    <h1 class="font-bold mb-6"> Paid </h1>
-                    <div class="flex flex-col gap-4">
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                    </div>
-                </div>
-                <div>
-                    <h1 class="font-bold mb-6"> Balance remaining </h1>
-                    <div class="flex flex-col gap-4">
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                        <h1>40,000</h1>
-                    </div>
-                </div>
-                <div>
-                    <h1 class="font-bold mb-6"> Signature </h1>
-                    <div class="flex flex-col gap-4">
-                        <h1>Signed</h1>
-                        <h1>Signed</h1>
-                        <h1>Signed</h1>
-                        <h1>Signed</h1>
-                        <h1>Signed</h1>
+        <div class="m-4 mb-8">
+            <h1 class="font-bold text-3xl mb-4">Payment History for {{ $patient->firstname }} {{ $patient->lastname }}
+            </h1>
 
-                    </div>
+            @if (session('success'))
+                <div class="bg-green-500 text-white p-4 rounded-md mb-4">
+                    {{ session('success') }}
                 </div>
+            @endif
+
+            <div class="bg-white shadow-lg rounded-md p-4">
+                @if ($patient->payments->isEmpty())
+                    <p>No payments recorded yet.</p>
+                @else
+                    <table class="w-full table-auto">
+                        <thead>
+                            <tr>
+                                <th class="px-4 py-2">Tooth Number</th>
+                                <th class="px-4 py-2">Dentist</th>
+                                <th class="px-4 py-2">Procedure</th>
+                                <th class="px-4 py-2">Charge</th>
+                                <th class="px-4 py-2">Paid</th>
+                                <th class="px-4 py-2">Balance Remaining</th>
+                                <th class="px-4 py-2">Remarks</th>
+                                <th class="px-4 py-2">Signature</th>
+                                <th class="px-4 py-2">Payment Date</th>
+                                <th class="px-4 py-2">Status</th>
+                                <th class="px-4 py-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($patient->payments as $payment)
+                                <tr>
+                                    <td class="border px-4 py-2">{{ $payment->tooth_number }}</td>
+                                    <td class="border px-4 py-2">{{ $payment->dentist }}</td>
+                                    <td class="border px-4 py-2">{{ $payment->procedure }}</td>
+                                    <td class="border px-4 py-2">{{ $payment->charge }}</td>
+                                    <td class="border px-4 py-2">{{ $payment->paid }}</td>
+                                    <td class="border px-4 py-2">{{ $payment->balance_remaining }}</td>
+                                    <td class="border px-4 py-2">{{ $payment->remarks }}</td>
+                                    <td class="border px-4 py-2">{{ $payment->signature ? 'Signed' : 'Not Signed' }}</td>
+                                    <td class="border px-4 py-2">{{ $payment->payment_date }}</td>
+                                    <td class="border px-4 py-2">{{ ucfirst($payment->status) }}</td>
+                                    <td class="border px-4 py-2">
+                                        @if ($payment->status == 'ongoing')
+                                            <a href="{{ route('update.payment.page', ['patient' => $patient->id, 'payment' => $payment->id]) }}"
+                                                class="bg-blue-500 text-white p-2 rounded">Update</a>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                @endif
             </div>
         </div>
     </section>

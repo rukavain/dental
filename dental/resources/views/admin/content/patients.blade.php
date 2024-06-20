@@ -87,7 +87,7 @@
                 <h1 class="font-semibold text-xl mb-4">Package</h1>
                 <div class="flex flex-col gap-6">
                     @foreach ($patients as $patient)
-                        <h1> {{ $patient->package }}</h1>
+                        <h1 id="package"> {{ $patient->package }}</h1>
                     @endforeach
                 </div>
             </div>
@@ -113,13 +113,13 @@
                 <div class="flex flex-col gap-2">
                     @foreach ($patients as $patient)
                         <div class="flex gap-4">
-                            <a class="bg-green-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-green-800 transition-all"
+                            <a class="bg-gray-200 border border-slate-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-400 transition-all"
                                 href=" {{ route('update.patient.page', $patient->id) }} ">
-                                Update
+                                <img class=h-6 src="{{ asset('images/edit-icon.png') }}" alt="">
                             </a>
                             <a href=" {{ route('show.patient', $patient->id) }} "
-                                class="bg-gray-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-800 transition-all">
-                                View
+                                class="bg-gray-200 border border-slate-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-400 transition-all">
+                                <img class=h-6 src="{{ asset('images/view-icon.png') }}" alt="">
                             </a>
                         </div>
                     @endforeach
@@ -130,6 +130,8 @@
     <script>
         document.getElementById('sort').addEventListener('change', function() {
             this.form.submit();
+            document.getElementById('package').toUpperCase();
+
         });
     </script>
 @endsection

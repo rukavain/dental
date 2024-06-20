@@ -20,4 +20,10 @@ class Patient extends Model
         'date_of_next_visit',
         'address'
     ];
+
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

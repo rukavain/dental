@@ -5,7 +5,10 @@
 @section('content')
     <section class="flex py-8 flex-wrap justify-between md:justify-center mx-4 items-center ">
         <div class="bg-white flex flex-col py-11 px-12 mx-8 rounded-lg shadow-lg gap-6 md:max-w-lg h-full">
-            <a href="{{ route('overview') }}" class="text-7xl font-semibold max-md:text-5xl">Look forward to the dentist</a>
+            <h1 class="text-7xl font-semibold max-md:text-5xl">
+                <span> <a href="{{ route('overview') }}">L</a></span>ook
+                forward to the dentist
+            </h1>
             <h1 class="text-lg">Top-rated clinicians</h1>
             <div class="w-1/2 py-2 flex flex-col justify-center items-start gap-4">
                 <a class="max-w-sm text-center mt-4" href="{{ route('request-appointment') }}">
