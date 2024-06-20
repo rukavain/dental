@@ -4,7 +4,7 @@
         @include('components.search')
     </div>
     <section class="bg-white m-4 p-8 shadow-lg rounded-md flex flex-col justify-center z-0">
-        <div class="flex justify-between">
+        <div class="flex justify-between items-start">
             <div>
                 <h1 class="text-5xl font-bold mb-6">{{ $patient->firstname }} {{ $patient->lastname }} </h1>
                 <div class="flex flex-col gap-3 text-md">
@@ -17,25 +17,42 @@
                     <h1> Address: <span class="font-semibold"> {{ $patient->address }} </span> </h1>
                 </div>
             </div>
-            <div class="flex flex-col gap-4 ">
-                <a href=" {{ route('update.patient.page', $patient->id) }} "
-                    class="bg-gray-600 rounded-md text-center p-4 text-white font-semibold hover:bg-gray-800 transition-all">Edit
-                    patient information</a>
+            <div class="flex flex-col gap-4">
+                <a href="{{ route('update.patient.page', $patient->id) }}"
+                    class=" flex items-center justify-start gap-2 py-2 px-4 border border-gray-500 rounded-md hover:border-gray-700 hover:shadow-sm transition-all">
+                    <img class="h-8 " src="{{ asset('images/edit-icon.png') }}" alt="Edit icon">
+                    <h1>
+                        Edit patient information</h1>
+                </a>
+                <a
+                    href=""class="flex items-center justify-start gap-2 py-2 px-4 border border-gray-500 rounded-md hover:border-gray-700 hover:shadow-sm transition-all">
+                    <img class="h-8" src="{{ asset('images/contract.png') }}" alt="">
+                    <h1>
+                        View patient contract</h1>
+                </a>
                 <a href=""
-                    class="bg-gray-600 rounded-md p-4 text-center text-white font-semibold hover:bg-gray-800 transition-all">
-                    View Patient Contract</a>
+                    class=" flex items-center justify-start gap-2 py-2 px-4 border border-gray-500 rounded-md hover:border-gray-700 hover:shadow-sm transition-all">
+                    <img class="h-8" src="{{ asset('images/background.png') }}" alt="">
+                    <h1>
+                        View background of the patient</h1>
+                </a>
                 <a href=""
-                    class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
-                    View Background of the patient</a>
-                <a href=""
-                    class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
-                    View X-rays</a>
+                    class=" flex items-center justify-start gap-2 py-2 px-4 border border-gray-500 rounded-md hover:border-gray-700 hover:shadow-sm transition-all">
+                    <img class="h-8" src="{{ asset('images/x-ray.png') }}" alt="">
+                    <h1>
+                        View patient x-rays</h1>
+                </a>
                 <a href="{{ route('add.payment.page', $patient->id) }}"
-                    class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
-                    Add payment</a>
-                <a class="bg-green-600 rounded-md p-4 text-white text-center font-semibold hover:bg-green-800 transition-all"
+                    class=" flex items-center justify-start gap-2 py-2 px-4 border border-gray-500 rounded-md hover:border-gray-700 hover:shadow-sm transition-all">
+                    <img class="h-8" src="{{ asset('images/payment.png') }}" alt="">
+                    <h1>
+                        Add payment</h1>
+                </a>
+                <a class=" flex items-center justify-start gap-2 py-2 px-4 border border-gray-500 rounded-md hover:border-gray-700 hover:shadow-sm transition-all"
                     href=" {{ route('patient.list') }} ">
-                    Go back
+                    <img class="h-8" src="{{ asset('images/arrow-back.png') }}" alt="">
+                    <h1>
+                        Go back to patient list</h1>
                 </a>
             </div>
         </div>
