@@ -82,8 +82,12 @@
                                     <td class="border px-4 py-2">{{ $payment->payment_date }}</td>
                                     <td class="border px-4 py-2">
                                         @if ($payment->balance_remaining > 0)
-                                            <a href="{{ route('update.payment.page', [$patient->id, $payment->id]) }}"
-                                                class="bg-blue-500 text-white p-2 rounded">Update Payment</a>
+                                            <a class="flex gap-2 items-center justify-center"
+                                                href="{{ route('update.payment.page', [$patient->id, $payment->id]) }}">
+                                                <img class="h-8" src="{{ asset('images/update-payment.png') }}"
+                                                    alt="">
+                                                <h1 class="text-md">Update</h1>
+                                            </a>
                                         @endif
                                     </td>
                                 </tr>
