@@ -7,7 +7,7 @@
     <section class="bg-white m-4 p-8 shadow-lg rounded-md flex flex-col justify-center z-0">
         <h1 class="text-5xl font-bold mb-6">Update Payment for {{ $patient->firstname }} {{ $patient->lastname }}</h1>
 
-        <form action="{{ route('update.payment', ['patient' => $patient->id, 'payment' => $payment->id]) }}" method="POST">
+        <form action="{{ route('update.payment', [$patient->id, $payment->id]) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-4">

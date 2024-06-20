@@ -35,11 +35,10 @@ class PaymentController extends Controller
             $paymentData['status'] = 'done';
         }
 
-        $payment = Payment::create($paymentData);
+        Payment::create($paymentData);
 
         return redirect()->route('show.patient', $patient->id)->with('success', 'Payment recorded successfully.');
     }
-
 
     public function edit(Patient $patient, Payment $payment)
     {
@@ -54,30 +53,18 @@ class PaymentController extends Controller
         Log::info('Updating payment', ['patient_id' => $patient->id, 'payment_id' => $payment->id]);
 
         $request->validate([
-            'tooth_number' => 'nullable|string',
-            'dentist' => 'nullable|string',
-            'procedure' => 'nullable|string',
-            'charge' => 'required|numeric|min:0',
             'paid' => 'required|numeric|min:0',
-            'balance_remaining' => 'required|numeric|min:0',
             'remarks' => 'nullable|string',
             'signature' => 'nullable|boolean',
-            'payment_date' => 'nullable|date',
         ]);
 
         try {
-            $payment->update([
-                'tooth_number' => $request->input('tooth_number'),
-                'dentist' => $request->input('dentist'),
-                'procedure' => $request->input('procedure'),
-                'charge' => $request->input('charge'),
-                'paid' => $request->input('paid'),
-                'balance_remaining' => $request->input('balance_remaining'),
-                'remarks' => $request->input('remarks'),
-                'signature' => $request->input('signature', false),
-                'payment_date' => $request->input('payment_date'),
-                'status' => $payment->balance_remaining == 0 ? 'done' : 'ongoing',
-            ]);
+            $payment->paid += $request->input('paid');
+            $payment->balance_remaining -= $request->input('paid');
+            $payment->remarks = $request->input('remarks');
+            $payment->signature = $request->input('signature', false); // Default to false if not present
+
+            $payment->save();
 
             Log::info('Payment updated successfully', ['payment' => $payment]);
         } catch (\Exception $e) {

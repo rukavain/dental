@@ -3,7 +3,6 @@
     <div class="m-4">
         @include('components.search')
     </div>
-
     <section class="bg-white m-4 p-8 shadow-lg rounded-md flex flex-col justify-center z-0">
         <div class="flex justify-between">
             <div>
@@ -18,8 +17,8 @@
                     <h1> Address: <span class="font-semibold"> {{ $patient->address }} </span> </h1>
                 </div>
             </div>
-            <div class="flex flex-col gap-4">
-                <a href="{{ route('update.patient.page', $patient->id) }}"
+            <div class="flex flex-col gap-4 ">
+                <a href=" {{ route('update.patient.page', $patient->id) }} "
                     class="bg-gray-600 rounded-md text-center p-4 text-white font-semibold hover:bg-gray-800 transition-all">Edit
                     patient information</a>
                 <a href=""
@@ -35,7 +34,7 @@
                     class="bg-gray-600 rounded-md p-4 text-white text-center font-semibold hover:bg-gray-800 transition-all">
                     Add payment</a>
                 <a class="bg-green-600 rounded-md p-4 text-white text-center font-semibold hover:bg-green-800 transition-all"
-                    href="{{ route('patient.list') }}">
+                    href=" {{ route('patient.list') }} ">
                     Go back
                 </a>
             </div>
@@ -51,7 +50,7 @@
             @endif
 
             <div class="bg-white shadow-lg rounded-md p-4">
-                @if ($patient->payments->isEmpty())
+                @if ($payments->isEmpty())
                     <p>No payments recorded yet.</p>
                 @else
                     <table class="w-full table-auto">
@@ -66,12 +65,11 @@
                                 <th class="px-4 py-2">Remarks</th>
                                 <th class="px-4 py-2">Signature</th>
                                 <th class="px-4 py-2">Payment Date</th>
-                                <th class="px-4 py-2">Status</th>
                                 <th class="px-4 py-2">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($patient->payments as $payment)
+                            @foreach ($payments as $payment)
                                 <tr>
                                     <td class="border px-4 py-2">{{ $payment->tooth_number }}</td>
                                     <td class="border px-4 py-2">{{ $payment->dentist }}</td>
@@ -82,11 +80,10 @@
                                     <td class="border px-4 py-2">{{ $payment->remarks }}</td>
                                     <td class="border px-4 py-2">{{ $payment->signature ? 'Signed' : 'Not Signed' }}</td>
                                     <td class="border px-4 py-2">{{ $payment->payment_date }}</td>
-                                    <td class="border px-4 py-2">{{ ucfirst($payment->status) }}</td>
                                     <td class="border px-4 py-2">
-                                        @if ($payment->status == 'ongoing')
-                                            <a href="{{ route('update.payment.page', ['patient' => $patient->id, 'payment' => $payment->id]) }}"
-                                                class="bg-blue-500 text-white p-2 rounded">Update</a>
+                                        @if ($payment->balance_remaining > 0)
+                                            <a href="{{ route('update.payment.page', [$patient->id, $payment->id]) }}"
+                                                class="bg-blue-500 text-white p-2 rounded">Update Payment</a>
                                         @endif
                                     </td>
                                 </tr>
