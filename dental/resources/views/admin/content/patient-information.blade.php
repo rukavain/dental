@@ -62,10 +62,11 @@
                                 <th class="px-4 py-2">Charge</th>
                                 <th class="px-4 py-2">Paid</th>
                                 <th class="px-4 py-2">Balance Remaining</th>
-                                <th class="px-4 py-2">Remarks</th>
+                                <th class="px-4 py-2 max-w-sm">Remarks</th>
                                 <th class="px-4 py-2">Signature</th>
                                 <th class="px-4 py-2">Payment Date</th>
                                 <th class="px-4 py-2">Actions</th>
+                                <th class="px-4 py-2">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -77,7 +78,7 @@
                                     <td class="border px-4 py-2">{{ $payment->charge }}</td>
                                     <td class="border px-4 py-2">{{ $payment->paid }}</td>
                                     <td class="border px-4 py-2">{{ $payment->balance_remaining }}</td>
-                                    <td class="border px-4 py-2">{{ $payment->remarks }}</td>
+                                    <td class="border px-4 py-2 max-w-sm">{{ $payment->remarks }}</td>
                                     <td class="border px-4 py-2">{{ $payment->signature ? 'Signed' : 'Not Signed' }}</td>
                                     <td class="border px-4 py-2">{{ $payment->payment_date }}</td>
                                     <td class="border px-4 py-2">
@@ -88,6 +89,21 @@
                                                     alt="">
                                                 <h1 class="text-md">Update</h1>
                                             </a>
+                                        @else
+                                            <button disabled
+                                                class="flex gap-2 items-center justify-center opacity-35
+                                                href="{{ route('update.payment.page', [$patient->id, $payment->id]) }}">
+                                                <img class="h-8" src="{{ asset('images/update-payment.png') }}"
+                                                    alt="">
+                                                <h1 class="text-md">Update</h1>
+                                            </button>
+                                        @endif
+                                    </td>
+                                    <td class="border px-4 py-2 min-w-max">
+                                        @if ($payment->balance_remaining > 0)
+                                            <h1 class="text-md ">On going</h1>
+                                        @else
+                                            <h1 class="text-md ">Done</h1>
                                         @endif
                                     </td>
                                 </tr>
