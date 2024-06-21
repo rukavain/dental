@@ -28,8 +28,6 @@ class ContactController extends Controller
             'message' => $request->message,
         ];
 
-        Mail::to('magtoto599@gmail.com')->send(new ContactMail($details));
-
         ContactSubmission::create($details);
 
         return redirect()->route('homepage')->with('success', 'Message successfully submitted');

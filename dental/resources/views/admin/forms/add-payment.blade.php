@@ -3,7 +3,7 @@
 @extends('admin.dashboard')
 
 @section('content')
-    <div class="m-4 mb-8">
+    <div class="m-8 bg-white rounded-md p-4 shadow-lg max-w-4xl">
         <h1 class="font-bold text-3xl mb-4">Add Payment for {{ $patient->firstname }} {{ $patient->lastname }}</h1>
 
         <form method="POST" action="{{ route('add.payment', $patient->id) }}">
@@ -56,7 +56,12 @@
                         class="border border-gray-400 py-2 px-4 rounded-md" required>
                 </label>
             </div>
-            <button type="submit" class="mt-4 py-2 px-4 bg-green-600 text-white rounded-md">Add Payment</button>
+            <button type="submit"
+                class="mt-4 py-2 px-4 hover:bg-green-600 border-2 border-green-600 hover:text-white rounded-md transition-all">Add
+                Payment</button>
+            <a href="{{ route('show.patient', $patient->id) }}" type="submit"
+                class="mt-4 py-2 px-4 hover:bg-red-600 border-2 border-red-600 hover:text-white rounded-md transition-all">
+                Cancel</a>
         </form>
     </div>
 @endsection

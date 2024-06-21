@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
@@ -9,9 +10,8 @@ Route::get('/', function () {
     return view('client.homepage');
 });
 
-//Routes for REDIRECTION of pages
+//CLIENT ROUTES
 
-//client routes
 Route::get('/request-appointment', [UserController::class, 'index'])->name('request-appointment');
 Route::get('/homepage', [UserController::class, 'mainpage'])->name('homepage');
 
@@ -19,16 +19,24 @@ Route::get('/homepage', [UserController::class, 'mainpage'])->name('homepage');
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
-//admin routes
+// < ====================================================================================================================================================== >
+// < ====================================================================================================================================================== >
+// < ====================================================================================================================================================== >
+
+//ADMIN ROUTES
+
+//navbar/sidebar routes
 Route::get('/admin-overview', [UserController::class, 'overview'])->name('overview');
 Route::get('/admin-patient-list', [UserController::class, 'patients'])->name('patient.list');
-Route::get('/patient-information/{patient}', [UserController::class, 'showPatient'])->name('show.patient');
+Route::get('/contact-submissions', [ContactController::class, 'viewSubmissions'])->name('contact.submissions.page');
+Route::get('/appointment-submissions', [AppointmentController::class, 'appointmentPage'])->name('appointment.page');
 
-//admin route forms
+//patient information routes
 Route::get('/admin-add-patient', [UserController::class, 'addPatient'])->name('add-patient-page');
 Route::post('/patients', [UserController::class, 'storePatient'])->name('add.patient');
 Route::get('/update-patient/{patient}', [UserController::class, 'updatePatientPage'])->name('update.patient.page');
 Route::put('/patients/{patient}', [UserController::class, 'updatePatient'])->name('update.patient');
+Route::get('/patient-information/{patient}', [UserController::class, 'showPatient'])->name('show.patient');
 
 //payment routes
 Route::get('/add-payment-page/{patient}', [PaymentController::class, 'create'])->name('add.payment.page');
@@ -38,4 +46,6 @@ Route::put('/update-payment/{patient}/{payment}', [PaymentController::class, 'up
 
 //contact routes
 Route::post('/contact-submit', [ContactController::class, 'submit'])->name('submit.contact');
-Route::get('/contact-submissions', [ContactController::class, 'viewSubmissions'])->name('contact.submissions.page');
+
+//appointment routes
+// Route::post('/appointment-submit', [AppointmentController::class, 'submit'])->name('submit.appointment');

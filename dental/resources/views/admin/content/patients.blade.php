@@ -49,83 +49,58 @@
                     </select>
                 </form>
             </label>
-            <div>
-                <button>
-                    <a class="bg-green-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-green-800 transition-all"
-                        href="{{ route('add-patient-page') }}">
-                        Add patient
-                    </a>
-                </button>
-            </div>
+            <a href="{{ route('add-patient-page') }}"
+                class="flex justify-center items-center gap-2  rounded-md py-2 px-4 min-w-max border-2 border-green-600 hover:shadow-md hover:border-green-700 font-semibold text-gray-800 transition-all">
+                Add patient
+                <img class="h-8" src="{{ asset('images/add-patient.png') }}" alt="">
+            </a>
         </div> <!-- run @/foreach for each field/row  -->
-        <div class="flex justify-around mx-3 gap-4  mt-8 bg-gray-50 p-4 w-full">
-            <div class="flex flex-col justify-center items-start">
-                <h1 class="font-semibold text-xl mb-4">ID</h1>
-                <div class="flex flex-col gap-6">
-                    @foreach ($patients as $patient)
-                        <h1> {{ $patient->id }} </h1>
-                    @endforeach
-                </div>
-            </div>
-            <div class="flex flex-col justify-center items-start">
-                <h1 class="font-semibold text-xl mb-4">Name</h1>
-                <div class="flex flex-col gap-6">
-                    @foreach ($patients as $patient)
-                        <h1> {{ $patient->lastname }} {{ $patient->firstname }} </h1>
-                    @endforeach
-                </div>
-            </div>
-            <div class="flex flex-col justify-center items-start">
-                <h1 class="font-semibold text-xl mb-4">Date of next visit</h1>
-                <div class="flex flex-col gap-6">
-                    @foreach ($patients as $patient)
-                        <h1> {{ $patient->date_of_next_visit }}</h1>
-                    @endforeach
-                </div>
-            </div>
-            <div class="flex flex-col justify-center items-start">
-                <h1 class="font-semibold text-xl mb-4">Package</h1>
-                <div class="flex flex-col gap-6">
-                    @foreach ($patients as $patient)
-                        <h1 id="package"> {{ $patient->package }}</h1>
-                    @endforeach
-                </div>
-            </div>
-            <div class="flex flex-col justify-center items-start ">
-                <h1 class="font-semibold text-xl mb-4 justify-self-start">Contacts</h1>
-                <div class="flex flex-col items-center justify-center gap-6">
-                    @foreach ($patients as $patient)
-                        <div class="flex gap-6">
-                            <div class="tooltip">
-                                <img class="h-6" src="{{ asset('images/call-icon.png') }}" alt="Call Icon">
-                                <span class="tooltiptext">{{ $patient->phone_number }}</span>
+        <table class="w-full table-auto">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2">ID</th>
+                    <th class="px-4 py-2">Name</th>
+                    <th class="px-4 py-2">Date of next visit</th>
+                    <th class="px-4 py-2">Package</th>
+                    <th class="px-4 py-2">Contacts</th>
+                    <th class="px-4 py-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($patients as $patient)
+                    <tr class="">
+                        <td class="border px-4 py-2">{{ $patient->id }}</td>
+                        <td class="border px-4 py-2">{{ $patient->lastname }} {{ $patient->firstname }}</td>
+                        <td class="border px-4 py-2">{{ $patient->date_of_next_visit }}</td>
+                        <td class="border px-4 py-2">{{ $patient->package }}</td>
+                        <td class="border px-4 py-2">
+                            <div class="flex justify-center items-center gap-6">
+                                <div class="tooltip">
+                                    <img class="h-8" src="{{ asset('images/call-icon.png') }}" alt="Call Icon">
+                                    <span class="tooltiptext">{{ $patient->phone_number }}</span>
+                                </div>
+                                <div class="tooltip">
+                                    <img class="h-6" src="{{ asset('images/facebook-gray.png') }}" alt="Facebook Icon">
+                                    <span class="tooltiptext">{{ $patient->facebook_name }}</span>
+                                </div>
                             </div>
-                            <div class="tooltip">
-                                <img class="h-6" src="{{ asset('images/facebook-gray.png') }}" alt="Facebook Icon">
-                                <span class="tooltiptext">{{ $patient->facebook_name }}</span>
+                        </td>
+                        <td class="border py-2">
+                            <div class="flex gap-2 justify-center items-center">
+                                <a class=" border border-slate-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-400 transition-all"
+                                    href=" {{ route('update.patient.page', $patient->id) }} ">
+                                    <img class=h-6 src="{{ asset('images/edit-icon.png') }}" alt="">
+                                </a>
+                                <a href=" {{ route('show.patient', $patient->id) }} "
+                                    class="border border-slate-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-400 transition-all">
+                                    <img class=h-6 src="{{ asset('images/view-icon.png') }}" alt="">
+                                </a>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="flex flex-col justify-center items-start">
-                <h1 class="font-semibold text-xl mb-4">Actions</h1>
-                <div class="flex flex-col gap-2">
-                    @foreach ($patients as $patient)
-                        <div class="flex gap-4">
-                            <a class="bg-gray-200 border border-slate-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-400 transition-all"
-                                href=" {{ route('update.patient.page', $patient->id) }} ">
-                                <img class=h-6 src="{{ asset('images/edit-icon.png') }}" alt="">
-                            </a>
-                            <a href=" {{ route('show.patient', $patient->id) }} "
-                                class="bg-gray-200 border border-slate-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-400 transition-all">
-                                <img class=h-6 src="{{ asset('images/view-icon.png') }}" alt="">
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </section>
     <script>
         document.getElementById('sort').addEventListener('change', function() {

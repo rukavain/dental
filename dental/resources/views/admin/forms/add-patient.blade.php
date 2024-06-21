@@ -66,16 +66,17 @@
                 </label>
                 <div class="flex gap-4 mt-4">
                     <button
-                        class="py-4 px-8 font-semibold rounded-md bg-green-600 text-white hover:bg-green-700 transition-all"
+                        class="py-2 px-8 font-semibold rounded-md hover:bg-green-600 hover:text-white text-gray-800 border-2 border-green-600 transition-all"
                         type="submit">
                         Add patient
                     </button>
                     <button
-                        class="py-4 px-8 font-semibold rounded-md bg-gray-600 text-white hover:bg-gray-700 transition-all"
+                        class="py-2 px-8 font-semibold rounded-md hover:bg-gray-600 border-2 border-gray-600 hover:text-white text-gray-800  transition-all"
                         type="reset">
                         Reset
                     </button>
-                    <button class="py-4 px-8 font-semibold rounded-md bg-red-600 text-white hover:bg-red-700 transition-all"
+                    <button
+                        class="py-2 px-8 font-semibold rounded-md hover:bg-red-600 border-2 border-red-600 text-gray-800  hover:text-white transition-all"
                         type="reset">
                         <a href=" {{ route('patient.list') }} ">
                             Cancel

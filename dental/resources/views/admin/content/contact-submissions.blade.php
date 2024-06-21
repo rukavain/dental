@@ -3,32 +3,27 @@
     <div class="m-4">
         @include('components.search')
     </div>
-    <h1 class="text-3xl font-bold mb-6">Contact Submissions</h1>
-
-    @if (session('success'))
-        <div class="bg-green-500 text-white p-4 rounded-md mb-6">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    <table class="min-w-full bg-white shadow-md rounded-lg">
-        <thead>
-            <tr>
-                <th class="py-2 px-4 border-b">Name</th>
-                <th class="py-2 px-4 border-b">Email</th>
-                <th class="py-2 px-4 border-b">Message</th>
-                <th class="py-2 px-4 border-b">Submitted At</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($submissions as $submission)
-                <tr>
-                    <td class="py-2 px-4 border-b">{{ $submission->name }}</td>
-                    <td class="py-2 px-4 border-b">{{ $submission->email }}</td>
-                    <td class="py-2 px-4 border-b">{{ $submission->message }}</td>
-                    <td class="py-2 px-4 border-b">{{ $submission->created_at }}</td>
+    <section class="flex flex-col gap-2 m-6 rounded-md p-4  bg-white shadow-md">
+        <h1 class="text-3xl font-bold mb-6">Contact Submissions</h1>
+        <table class="">
+            <thead>
+                <tr class="border">
+                    <th class="py-2 px-4 border">Name</th>
+                    <th class="py-2 px-4 border">Email</th>
+                    <th class="py-2 px-4 border">Message</th>
+                    <th class="py-2 px-4 border">Submitted At</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach ($submissions as $submission)
+                    <tr class="text-center">
+                        <td class="py-2 px-4 border">{{ $submission->name }}</td>
+                        <td class="py-2 px-4 border">{{ $submission->email }}</td>
+                        <td class="py-2 px-4 border text-left max-w-2xl">{{ $submission->message }}</td>
+                        <td class="py-2 px-4 border">{{ $submission->created_at }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </section>
 @endsection

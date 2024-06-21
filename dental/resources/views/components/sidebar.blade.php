@@ -32,16 +32,16 @@
                         Patient list
                     </button>
                 </a>
-                <a class="flex justify-center items-center gap-2" href="{{ route('add-patient-page') }}">
-                    <img class="h-8" src="{{ asset('images/add-patient.png') }}" alt="">
-                    <button class="hover:font-bold transition-all">
-                        Add patient
-                    </button>
-                </a>
                 <a class="flex justify-center items-center gap-2" href="{{ route('contact.submissions.page') }}">
                     <img class="h-8" src="{{ asset('images/email-logo.png') }}" alt="">
                     <button class="hover:font-bold transition-all">
                         Contact submissions
+                    </button>
+                </a>
+                <a class="flex justify-center items-center gap-2" href="{{ route('appointment.page') }}">
+                    <img class="h-8" src="{{ asset('images/appointment.png') }}" alt="">
+                    <button class="hover:font-bold transition-all">
+                        Appointment submissions
                     </button>
                 </a>
             </div>
