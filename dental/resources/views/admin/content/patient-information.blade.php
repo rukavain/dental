@@ -120,7 +120,7 @@
                                         @if ($payment->balance_remaining > 0)
                                             <h1 class="text-md ">On going</h1>
                                         @else
-                                            <h1 class="text-md ">Done</h1>
+                                            <h1 class="text-md text-green-600 font-semibold">Done</h1>
                                         @endif
                                     </td>
                                 </tr>

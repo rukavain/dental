@@ -3,8 +3,8 @@
     | Home
 @endsection
 @section('content')
-    <section class="flex py-8 flex-wrap justify-between md:justify-center mx-4 items-center ">
-        <div class="bg-white flex flex-col py-11 px-12 mx-8 rounded-lg shadow-lg gap-6 md:max-w-lg h-full">
+    <section class="flex flex-wrap justify-between md:justify-center mt-24 mx-8 items-start h-screen">
+        <div class="bg-white flex flex-col py-11 px-12 mx-8 rounded-lg shadow-lg gap-6 md:max-w-lg ">
             <h1 class="text-7xl font-semibold max-md:text-5xl">
                 <span> <a href="{{ route('overview') }}">L</a></span>ook
                 forward to the dentist
@@ -126,6 +126,11 @@
 
     @include('components.location')
     <div class="w-full flex justify-center items-center">
+        @if (session('success'))
+            <div class="bg-green-500 text-white p-4 rounded-md mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
         @include('components.contact')
     </div>
 

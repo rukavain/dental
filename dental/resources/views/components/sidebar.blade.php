@@ -38,6 +38,12 @@
                         Add patient
                     </button>
                 </a>
+                <a class="flex justify-center items-center gap-2" href="{{ route('contact.submissions.page') }}">
+                    <img class="h-8" src="{{ asset('images/email-logo.png') }}" alt="">
+                    <button class="hover:font-bold transition-all">
+                        Contact submissions
+                    </button>
+                </a>
             </div>
         </div>
         <a class="flex justify-center self-start     gap-2" href="">

@@ -37,5 +37,5 @@ Route::get('/update-payment-page/{patient}/{payment}', [PaymentController::class
 Route::put('/update-payment/{patient}/{payment}', [PaymentController::class, 'update'])->name('update.payment');
 
 //contact routes
-Route::get('/contact-page', [ContactController::class, 'show'])->name('contact.submissions.page');
 Route::post('/contact-submit', [ContactController::class, 'submit'])->name('submit.contact');
+Route::get('/contact-submissions', [ContactController::class, 'viewSubmissions'])->name('contact.submissions.page');

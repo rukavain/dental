@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
+use App\Models\ContactSubmission;
 
 class ContactController extends Controller
 {
@@ -29,8 +30,17 @@ class ContactController extends Controller
 
         Mail::to('magtoto599@gmail.com')->send(new ContactMail($details));
 
-        return view('emails.contact', [
-            'details' => $details
+        ContactSubmission::create($details);
+
+        return redirect()->route('homepage')->with('success', 'Message successfully submitted');
+    }
+
+    public function viewSubmissions()
+    {
+        $submissions = ContactSubmission::all();
+
+        return view('admin.content.contact-submissions', [
+            'submissions' => $submissions
         ]);
     }
 }

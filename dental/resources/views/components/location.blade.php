@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-slate-100">
-    <section class="bg-green-600 flex gap-4 justify-center flex-wrap items-center p-6 self-center">
+    <section class="bg-green-600 flex gap-4 justify-center flex-wrap items-center px-6 py-12 self-center">
         <div class=" rounded-md">
             <h1 class="text-3xl text-white font-semibold">
                 We are located at:
