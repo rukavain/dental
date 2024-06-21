@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,7 @@ Route::get('/add-payment-page/{patient}', [PaymentController::class, 'create'])-
 Route::post('/add-payment/{patient}', [PaymentController::class, 'store'])->name('add.payment');
 Route::get('/update-payment-page/{patient}/{payment}', [PaymentController::class, 'edit'])->name('update.payment.page');
 Route::put('/update-payment/{patient}/{payment}', [PaymentController::class, 'update'])->name('update.payment');
+
+//contact routes
+Route::get('/contact-page', [ContactController::class, 'show'])->name('contact.submissions.page');
+Route::post('/contact-submit', [ContactController::class, 'submit'])->name('submit.contact');
