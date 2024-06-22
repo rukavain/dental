@@ -50,7 +50,7 @@
                 </form>
             </label>
             <a href="{{ route('add-patient-page') }}"
-                class="flex justify-center items-center gap-2  rounded-md py-2 px-4 min-w-max border-2 border-green-600 hover:shadow-md hover:border-green-700 font-semibold text-gray-800 transition-all">
+                class="flex justify-center items-center gap-2  rounded-md py-2 px-4 min-w-max border-2 border-gray-600 hover:shadow-md hover:border-green-700 font-semibold text-gray-800 transition-all">
                 Add patient
                 <img class="h-8" src="{{ asset('images/add-patient.png') }}" alt="">
             </a>
@@ -80,7 +80,7 @@
                                     <span class="tooltiptext">{{ $patient->phone_number }}</span>
                                 </div>
                                 <div class="tooltip">
-                                    <img class="h-6" src="{{ asset('images/facebook-gray.png') }}" alt="Facebook Icon">
+                                    <img class="h-8" src="{{ asset('images/facebook.png') }}" alt="Facebook Icon">
                                     <span class="tooltiptext">{{ $patient->facebook_name }}</span>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                     href=" {{ route('update.patient.page', $patient->id) }} ">
                                     <img class=h-6 src="{{ asset('images/edit-icon.png') }}" alt="">
                                 </a>
-                                <a href=" {{ route('show.patient', $patient->id) }} "
+                                <a href="{{ route('show.patient', $patient->id) }}"
                                     class="border border-slate-600 rounded-md py-2 px-4 text-white font-semibold hover:bg-gray-400 transition-all">
                                     <img class=h-6 src="{{ asset('images/view-icon.png') }}" alt="">
                                 </a>

@@ -8,18 +8,18 @@
         <form method="POST" action="{{ route('add.patient') }}">
             @method('POST')
             @csrf
-            <div class="flex flex-wrap items-start justify-start gap-8 max-w-4xl p-8">
-                <label for="firstname">
+            <div class="flex flex-wrap items-start justify-start gap-8 max-w-4xl  p-8">
+                <label class="flex flex-col flex-1" for="firstname">
                     <h1>First name</h1>
-                    <input class="border border-gray-400 py-2 px-4 rounded-md" name="firstname" type="text" id="firstname"
-                        autocomplete="off" placeholder="Juan">
+                    <input class="border flex-grow min-w-max border-gray-400 py-2 px-4 rounded-md" name="firstname"
+                        type="text" id="firstname" autocomplete="off" placeholder="Juan">
                 </label>
-                <label for="lastname">
+                <label class="flex flex-col flex-1" for="lastname border border-red-500">
                     <h1>Last name</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="lastname" type="text" id="lastname"
                         autocomplete="off" placeholder="Dela Cruz">
                 </label>
-                <label for="gender">
+                <label class="flex flex-col flex-1" for="gender">
                     <h1>Gender</h1>
                     <select class="border border-gray-400 py-2 px-4 rounded-md" name="gender" id="gender">
                         <option value="male">Male</option>
@@ -28,17 +28,17 @@
                         <option value="prefer-not-to-say">Prefer not to say</option>
                     </select>
                 </label>
-                <label for="date_of_birth">
+                <label class="flex flex-col flex-1" for="date_of_birth">
                     <h1>Date of birth</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="date_of_birth" type="date"
                         id="date_of_birth">
                 </label>
-                <label for="facebook_name">
+                <label class="flex flex-col flex-1" for="facebook_name">
                     <h1>Facebook name</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="facebook_name" type="text"
                         autocomplete="off" id="facebook_name" placeholder="Dela Cruz">
                 </label>
-                <label for="Package">
+                <label class="flex flex-col flex-1" for="Package">
                     <h1>Package</h1>
                     <select class="border border-gray-400 py-2 px-4 rounded-md" name="package" id="package">
                         <option value="A">Package A</option>
@@ -48,12 +48,12 @@
                         <option value="E">Package E</option>
                     </select>
                 </label>
-                <label for="phone_number">
+                <label class="flex flex-col flex-1" for="phone_number">
                     <h1>Phone number</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="phone_number" type="text"
                         autocomplete="off" id="phone_number">
                 </label>
-                <label for="date_of_next_visit">
+                <label class="flex flex-col flex-1" for="date_of_next_visit">
                     <h1>Date of next visit</h1>
                     <input class="border border-gray-400 py-2 px-4 rounded-md" name="date_of_next_visit" type="date"
                         autocomplete="off" id="date_of_next_visit">
@@ -66,7 +66,7 @@
                 </label>
                 <div class="flex gap-4 mt-4">
                     <button
-                        class="py-2 px-8 font-semibold rounded-md hover:bg-green-600 hover:text-white text-gray-800 border-2 border-green-600 transition-all"
+                        class="py-2 px-8 font-semibold rounded-md hover:bg-green-600 hover:border-green-600 hover:text-white text-gray-800 border-2 border-gray-600 transition-all"
                         type="submit">
                         Add patient
                     </button>
@@ -75,13 +75,11 @@
                         type="reset">
                         Reset
                     </button>
-                    <button
-                        class="py-2 px-8 font-semibold rounded-md hover:bg-red-600 border-2 border-red-600 text-gray-800  hover:text-white transition-all"
+                    <a href=" {{ route('patient.list') }} "
+                        class="py-2 px-8 font-semibold rounded-md hover:bg-red-600 hover:border-red-600 border-2 border-gray-600 text-gray-800  hover:text-white transition-all"
                         type="reset">
-                        <a href=" {{ route('patient.list') }} ">
-                            Cancel
-                        </a>
-                    </button>
+                        Cancel
+                    </a>
                 </div>
             </div>
         </form>

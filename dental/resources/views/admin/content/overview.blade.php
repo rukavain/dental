@@ -2,11 +2,11 @@
 @section('content')
     <section class="flex m-4 flex-col gap-4">
         @include('components.search')
-        <div class="rounded-md shadow-lg p-7 bg-white my-4 gap-4">
+        <div class="rounded-xl shadow-lg p-7 bg-white my-4 gap-4">
             <h1 class="text-5xl font-bold my-2">Good day, Juan Dela Cruz!</h1>
             <h1>Have a nice working day!</h1>
         </div>
-        <div class="bg-white shadow-lg rounded-md p-5">
+        <div class="bg-white shadow-lg rounded-xl p-5">
             <div class="mb-8">
                 <h1 class="text-4xl font-semibold">Patient Statistics</h1>
                 <h1>Lorem ipsum dolor sit amet, consectetur</h1>
