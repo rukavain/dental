@@ -4,7 +4,7 @@
         @include('components.search')
     </div>
     <section class="flex flex-col gap-2 m-6 rounded-md p-4  bg-white shadow-md">
-        <h1 class="text-3xl font-bold mb-6">Contact Submissions</h1>
+        <h1 class="text-3xl font-bold mb-6">Appointment Submissions</h1>
         <table class="">
             <thead>
                 <tr class="border">
@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($appointmentSubmissions as $submission)
+                @foreach ($appointments as $submission)
                     <tr class="text-center">
                         <td class="py-2 px-4 border">{{ $submission->firstname }} {{ $submission->lastname }}</td>
                         <td class="py-2 px-4 border">{{ $submission->date_of_birth}}</td>

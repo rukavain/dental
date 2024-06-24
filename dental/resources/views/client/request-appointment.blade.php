@@ -28,45 +28,45 @@
                     <label for="firstname">
                         <h1>First name</h1>
                         <input class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="firstname"
-                            placeholder="Juan">
+                          name="firstname"  placeholder="Juan">
                     </label>
                     <label for="lastname">
                         <h1>Last name</h1>
                         <input class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="lastname"
-                            placeholder="Dela Cruz">
+                        name="lastname" placeholder="Dela Cruz">
                     </label>
                     <label for="date-of-birth">
                         <h1>Date of birth</h1>
-                        <input class="border border-gray-400 py-2 px-4 rounded-md" type="date" id="date-of-birth">
+                        <input name="date_of_birth" class="border border-gray-400 py-2 px-4 rounded-md" type="date" id="date-of-birth">
                     </label>
                     <label for="phone-number">
                         <h1>Phone number</h1>
-                        <input class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="phone-number">
+                        <input name="phone_number" class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="phone-number">
                     </label>
                     <label for="email">
                         <h1>E-mail</h1>
-                        <input class="border border-gray-400 py-2 px-4 rounded-md" type="email" id="email">
+                        <input name="email" class="border border-gray-400 py-2 px-4 rounded-md" type="email" id="email">
                     </label>
                     <label for="zip-code">
                         <h1>Zip code</h1>
-                        <input class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="zip-code">
+                        <input name="zip_code" class="border border-gray-400 py-2 px-4 rounded-md" type="text" id="zip-code">
                     </label>
                 </div>
                 <div class="flex flex-col justify-evenly gap-4">
                     <label for="appointment-date">
                         <h1>Appointment date</h1>
                         <input class="border border-gray-400 py-2 px-4 rounded-md" type="date" id="appointment-date"
-                            id="date">
+                        name="appointment_date" id="date">
                     </label>
                     <label for="time">
                         <h1>Preferred Time</h1>
                         <select class="border border-gray-400 py-2 px-4 rounded-md" type="dropdown" id="appointment-date"
-                            id="time">
-                            <option value="">No preference</option>
-                            <option value="">Early morning</option>
-                            <option value="">Late morning</option>
-                            <option value="">Early afternoon</option>
-                            <option value="">Late afternoon</option>
+                            name="preferred_time" id="time">
+                            <option value="No preference">No preference</option>
+                            <option value="Early morning">Early morning</option>
+                            <option value="Late morning">Late morning</option>
+                            <option value="Early afternoon">Early afternoon</option>
+                            <option value="Late afternoon">Late afternoon</option>
                         </select>
                     </label>
                     <label for="notes">
@@ -76,12 +76,11 @@
                     </label>
                 </div>
             </div>
-            <a class="m-5" href="">
-                <button type="submit"
-                    class="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md py-4 px-12 text-md transition-all">
-                    Submit
-                </button>
-            </a>
+
+            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md py-4 px-12 text-md transition-all">
+                Submit
+            </button>
+
         </form>
         <script>
             const today = new Date().toISOString().split('T')[0];

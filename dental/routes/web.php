@@ -29,7 +29,7 @@ Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::get('/admin-overview', [UserController::class, 'overview'])->name('overview');
 Route::get('/admin-patient-list', [UserController::class, 'patients'])->name('patient.list');
 Route::get('/contact-submissions', [ContactController::class, 'viewSubmissions'])->name('contact.submissions.page');
-Route::get('/appointment-submissions', [AppointmentController::class, 'appointmentPage'])->name('appointment.page');
+Route::get('/appointment-submissions', [AppointmentController::class, 'viewSubmissions'])->name('appointment.page');
 
 //patient information routes
 Route::get('/admin-add-patient', [UserController::class, 'addPatient'])->name('add-patient-page');

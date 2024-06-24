@@ -16,7 +16,7 @@ class AppointmentController extends Controller
             'firstname' => 'required|min:3|max:254|string',
             'lastname' => 'required|min:3|max:254|string',
             'date_of_birth' => 'required|date',
-            'phone_number' => 'required|numeric',
+            'phone_number' => 'required|string|max:20',
             'email' => 'email|required',
             'zip_code' => 'required|numeric',
             'appointment_date' => 'nullable|date',
@@ -43,10 +43,10 @@ class AppointmentController extends Controller
     }
     public function viewSubmissions(){
 
-        $appointmentSubmissions = Appointment::all();
+        $appointments = Appointment::all();
 
         return view('admin.content.appointment-submissions', [
-            'appointmentSubmissions' => $appointmentSubmissions
+            'appointments' => $appointments
         ]);
     }
 }
