@@ -48,4 +48,4 @@ Route::put('/update-payment/{patient}/{payment}', [PaymentController::class, 'up
 Route::post('/contact-submit', [ContactController::class, 'submit'])->name('submit.contact');
 
 //appointment routes
-// Route::post('/appointment-submit', [AppointmentController::class, 'submit'])->name('submit.appointment');
+Route::post('/appointment-submit', [AppointmentController::class, 'submit'])->name('submit.appointment');

@@ -12,8 +12,10 @@
             </div>
             <img class="opacity-35 object-fill" src="{{ asset('images/appointment-landing.jpg') }}" alt="">
         </div>
-        <form action=""
+        <form action="{{route('submit.appointment')}}" method="POST"
             class="bg-white my-12 mx-4 p-12 w-2xl shadow-lg rounded-md flex flex-col justify-center items-center">
+            @csrf
+
             <h1 class="text-center my-8 text-5xl font-bold max-w-2xl placeholder-yellow-800">Please enter your contact
                 information.</h1>
             <div class="flex w-full gap-4 items-start justify-evenly py-8">
