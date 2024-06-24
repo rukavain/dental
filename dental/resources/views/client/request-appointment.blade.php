@@ -18,6 +18,11 @@
 
             <h1 class="text-center my-8 text-5xl font-bold max-w-2xl placeholder-yellow-800">Please enter your contact
                 information.</h1>
+                @if (session('success'))
+            <div class="bg-green-500 text-white p-4 rounded-md mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
             <div class="flex w-full gap-4 items-start justify-evenly py-8">
                 <div class="flex flex-col gap-4 justify-center items-start">
                     <label for="firstname">

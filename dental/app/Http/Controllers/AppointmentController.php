@@ -41,4 +41,12 @@ class AppointmentController extends Controller
         return redirect()->route('appointment.page')->with('success', 'Appointment submitted.');
 
     }
+    public function viewSubmissions(){
+
+        $appointmentSubmissions = Appointment::all();
+
+        return view('admin.content.appointment-submissions', [
+            'appointmentSubmissions' => $appointmentSubmissions
+        ]);
+    }
 }
