@@ -15,7 +15,6 @@
         <form action="{{route('submit.appointment')}}" method="POST"
             class="bg-white my-12 mx-4 p-12 w-2xl shadow-lg rounded-md flex flex-col justify-center items-center">
             @csrf
-
             <h1 class="text-center my-8 text-5xl font-bold max-w-2xl placeholder-yellow-800">Please enter your contact
                 information.</h1>
                 @if (session('success'))

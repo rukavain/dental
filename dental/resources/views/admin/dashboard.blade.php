@@ -25,5 +25,4 @@
     <hr>
     @include('components.footer')
 </body>
-
 </html>

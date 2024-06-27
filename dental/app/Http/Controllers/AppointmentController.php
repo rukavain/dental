@@ -38,7 +38,7 @@ class AppointmentController extends Controller
 
         Appointment::create($appointmentDetails);
 
-        return redirect()->route('appointment.page')->with('success', 'Appointment submitted.');
+        return redirect()->route('request-appointment')->with('success', 'Appointment submitted.');
 
     }
     public function viewSubmissions(){
